@@ -1,0 +1,43 @@
+{% assign current_url = page.url | default: '/' %}
+<header class="site-header" role="banner">
+  <div class="container header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Project Overwatch home">
+      <span class="brand-shield"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+      <span class="brand-text">
+        <span class="brand-name">PROJECT OVERWATCH</span>
+        <span class="brand-sub">AI Runaway Scenario Evaluation</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary navigation">
+      {% for item in site.data.navigation %}
+        {% assign link_url = item.url %}
+        {% assign is_active = false %}
+        {% if link_url == '/' %}
+          {% if current_url == '/' %}{% assign is_active = true %}{% endif %}
+        {% else %}
+          {% if current_url contains link_url %}{% assign is_active = true %}{% endif %}
+        {% endif %}
+        <a class="nav-link{% if is_active %} is-active{% endif %}" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-primary btn-sm" href="{{ '/dashboard/' | relative_url }}">
+        <i class="fa-solid fa-gauge-high" aria-hidden="true"></i> Open Dashboard
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    {% for item in site.data.navigation %}
+      <a class="mobile-nav-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+    {% endfor %}
+    <a class="mobile-nav-link mobile-nav-cta" href="{{ '/dashboard/' | relative_url }}">
+      <i class="fa-solid fa-gauge-high" aria-hidden="true"></i> Open Interactive Dashboard
+    </a>
+  </div>
+</header>

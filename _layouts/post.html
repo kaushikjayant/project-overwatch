@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<article class="container post">
+  <header class="post-header">
+    <a class="back-link" href="{{ '/blog/' | relative_url }}"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> All briefings</a>
+    <div class="post-meta">
+      <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+      <span class="dot" aria-hidden="true">·</span>
+      <span>{{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+    </div>
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="post-subtitle">{{ page.subtitle }}</p>{% endif %}
+    {% if page.tags %}
+    <div class="tag-list">
+      {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+    </div>
+    {% endif %}
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  <nav class="post-nav" aria-label="Post navigation">
+    <div class="post-nav-prev">
+      {% if page.previous.url %}<a href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title }}</a>{% endif %}
+    </div>
+    <div class="post-nav-next">
+      {% if page.next.url %}<a href="{{ page.next.url | relative_url }}">{{ page.next.title }} &rarr;</a>{% endif %}
+    </div>
+  </nav>
+</article>

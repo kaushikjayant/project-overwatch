@@ -1,0 +1,69 @@
+# ============================================================
+# Project Overwatch — AI Runaway Scenario Evaluation
+# Jekyll configuration (GitHub Pages compatible)
+# ============================================================
+
+title: "Project Overwatch — AI Runaway Scenario Evaluation"
+tagline: "Scientific Verification of the Catastrophic Escalate-to-Survive Loop"
+description: >-
+  A rigorous, peer-referenced evaluation of the runaway escalation dynamics
+  in autonomous military AI — tracing the path from tactical target
+  elimination to instrumental convergence, with an interactive simulation
+  engine, academic verification matrix, and defense-in-depth mitigation
+  architecture.
+
+author: "Project Overwatch Research"
+author_email: "jayant.kaush@gmail.com"
+
+# --- GitHub Pages deployment (project page) ---
+# <username> and <repo> are finalized after repository creation.
+url: "https://kaushikjayant.github.io"
+baseurl: "/ai-runaway-scenario-evaluation"
+repository: "kaushikjayant/ai-runaway-scenario-evaluation"
+
+github_username: kaushikjayant
+
+# --- Build settings ---
+markdown: kramdown
+highlighter: rouge
+
+# GitHub Pages whitelisted plugins (build happens remotely)
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      permalink: /blog/:year/:month/:day/:title/
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page
+
+# Collections (optional, reserved for future expansion)
+collections:
+  briefings:
+    output: true
+    permalink: /briefings/:path/
+
+sass:
+  style: compressed
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .gitignore
+
+# Pagination is not available on stock GitHub Pages; the blog index simply
+# renders all posts in reverse chronological order.

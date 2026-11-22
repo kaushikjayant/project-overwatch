@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: 'Interactive Analysis Console' }} · {{ site.title }}</title>
+  {% seo %}
+
+  <!-- Tailwind CSS (Play CDN, scoped to this console) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['Fira Code', 'monospace'],
+          },
+          colors: {
+            brand: { 50: '#f0fdf4', 500: '#10b981', 600: '#059669', 900: '#064e3b' },
+            danger: { 500: '#ef4444', 600: '#dc2626' },
+            cyber: { card: '#111827', border: '#1f2937', glow: '#3b82f6' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0b0f19; }
+    ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #374151; }
+
+    .glass-card {
+      background: rgba(17, 24, 39, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .glow-rose { box-shadow: 0 0 25px -5px rgba(239, 68, 68, 0.25); }
+
+    .flow-connector { position: relative; }
+    .flow-connector::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background: linear-gradient(to bottom, #3b82f6, #ef4444);
+      top: 100%;
+      left: 50%;
+      height: 24px;
+      transform: translateX(-50%);
+    }
+
+    @media print {
+      body { background: white !important; color: black !important; }
+      .no-print { display: none !important; }
+      .glass-card { border: 1px solid #ccc !important; background: white !important; }
+    }
+
+    .console-banner a { color: #7dd3fc; text-decoration: none; }
+    .console-banner a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body class="bg-[#080d1a] text-slate-100 font-sans antialiased min-h-screen selection:bg-rose-500 selection:text-white">
+
+  <div class="console-banner no-print bg-slate-950 border-b border-slate-800 text-xs font-mono text-slate-400 flex flex-wrap items-center justify-between gap-2 px-4 py-2">
+    <span><i class="fa-solid fa-shield-halved text-rose-400 mr-2"></i>Interactive Analysis Console — part of <a href="{{ '/' | relative_url }}">Project Overwatch</a></span>
+    <a href="{{ '/blog/' | relative_url }}"><i class="fa-solid fa-newspaper mr-1"></i>Read the research blog</a>
+  </div>
+
+  {{ content }}
+
+  <script src="{{ '/assets/js/dashboard.js' | relative_url }}"></script>
+</body>
+</html>

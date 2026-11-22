@@ -1,0 +1,17 @@
+# Primary site navigation (rendered in the header)
+- title: Home
+  url: /
+- title: Executive Brief
+  url: /pages/executive-brief/
+- title: Flowchart
+  url: /pages/flowchart-analysis/
+- title: Scientific Validation
+  url: /pages/scientific-validation/
+- title: Simulator
+  url: /pages/simulator/
+- title: Mitigations
+  url: /pages/mitigation-architecture/
+- title: Blog
+  url: /blog/
+- title: About
+  url: /about/
