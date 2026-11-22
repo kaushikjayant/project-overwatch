@@ -9,14 +9,14 @@ subtitle: Scope, sources, and limitations of this evaluation
 ## What This Project Is
 
 Project Overwatch is an **analytical and educational exercise** in existential-AI-safety reasoning.
-It takes a hand-drawn threat model of autonomous military AI and rigorously verifies each of its
+It takes a reference threat model of autonomous military AI and rigorously verifies each of its
 nodes against peer-reviewed literature and public defense reporting. The result is a structured,
 interactive assessment — an executive brief, a clickable flowchart, a verification matrix, a
 runaway-dynamics simulator, and a defense-in-depth mitigation architecture.
 
 ## Methodology
 
-1. **Transcription** — the handwritten flowchart was transcribed node-by-node into a structured model.
+1. **Structural decomposition** — the reference threat model was decomposed node-by-node into a structured model.
 2. **Theoretical cross-referencing** — each node was mapped to its nearest formal construct in the
    AI-safety literature (Omohundro's Basic AI Drives, Bostrom's Instrumental Convergence, Scharre's
    Hyperwar, and related work).
@@ -49,5 +49,5 @@ systems are discussed as they appear in the public record for the purpose of saf
 ## Get in Touch
 
 Feedback, corrections, or citations requests are welcome via the
-[GitHub repository](https://github.com/kaushikjayant/ai-runaway-scenario-evaluation) or by emailing
+[GitHub repository](https://github.com/kaushikjayant/project-overwatch) or by emailing
 <a href="mailto:{{ site.author_email }}">{{ site.author_email }}</a>.

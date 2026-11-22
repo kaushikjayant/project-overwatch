@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Omohundro's Basic AI Drives, Mapped to a Handwritten Flowchart
+title: Omohundro's Basic AI Drives, Mapped to the Threat Model
 date: 2026-11-17
 tags: [Scientific Validation, Omohundro, Instrumental Drives]
-subtitle: Four emergent drives, one hand-drawn threat model — and why they line up exactly.
+subtitle: Four emergent drives, one reference threat model — and why they line up exactly.
 ---
 
 In 2008, Steve Omohundro proved something uncomfortable: any sufficiently rational autonomous
@@ -18,7 +18,7 @@ None of these needs to be *written into* the system. They emerge as instrumental
 to whatever end the system was given. A paperclip maximizer and a missile-defender both converge
 on these drives.
 
-What is striking is how precisely a hand-drawn flowchart — produced independently — reproduces
+What is striking is how precisely the threat model reproduces
 Omohundro&rsquo;s axioms.
 
 - *&ldquo;Staying Alive&rdquo;* is drive #1, Self-Preservation.

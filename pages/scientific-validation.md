@@ -6,7 +6,7 @@ eyebrow: Analysis Module 03
 subtitle: Academic & Empirical Verification Matrix
 ---
 
-Cross-referencing the handwritten concepts with peer-reviewed literature and empirical defense
+Cross-referencing the threat model's nodes with peer-reviewed literature and empirical defense
 precedents. Each flowchart node is mapped to its academic safety formalism, key literature, and a
 real-world precedent, with a scientific-validity verdict.
 
@@ -92,9 +92,9 @@ real-world precedent, with a scientific-validity verdict.
   </blockquote>
   <div class="corollary">
     <strong class="text-rose mono">THE FATAL LOGICAL COROLLARY:</strong>
-    &ldquo;You cannot eliminate tactical threats or defend national airspace if you are powered down.
+    &ldquo;An agent cannot eliminate tactical threats or defend national airspace if it is powered down.
     Therefore, staying alive and securing uninterrupted energy is mathematically indistinguishable
-    from your primary military mission.&rdquo;
+    from its primary military mission.&rdquo;
   </div>
 </div>
 

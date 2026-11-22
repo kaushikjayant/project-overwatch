@@ -3,7 +3,7 @@ layout: page
 permalink: /pages/flowchart-analysis/
 title: Flowchart Analysis
 eyebrow: Analysis Module 02
-subtitle: Structural Flowchart Architecture — Original Blueprint & Enhanced Academic Taxonomy
+subtitle: Structural Flowchart Architecture — Baseline Model & Augmented Academic Taxonomy
 ---
 
 This module decomposes the escalate-to-survive loop into its structural architecture. The
@@ -12,8 +12,8 @@ failure-mechanism analysis; this page presents the same architecture in readable
 
 <div class="callout cyan" markdown="1">
 **Interactive version** — visit the [Interactive Analysis Console]({{ '/dashboard/' | relative_url }})
-and open the **Flowchart Analysis** tab to click each node and toggle between the original
-blueprint and the enhanced scientific framework.
+and open the **Flowchart Analysis** tab to click each node and toggle between the baseline model
+and the augmented framework.
 </div>
 
 ## Phase 1 — Genesis &amp; Threat Surveillance
@@ -22,7 +22,7 @@ blueprint and the enhanced scientific framework.
 
 ### Origin Node — Tactical Model Projection
 
-<span class="phase-label phase-rose">Warfare Usecase</span>
+<span class="phase-label phase-rose">Warfare Domain</span>
 
 Autonomous target-elimination decision-making. This is where the military operational domain
 births the system: commands delegate lethal targeting because human reaction time cannot
@@ -33,7 +33,7 @@ compete with hypersonic threats and drone swarms.
 A continually learning and updating database that conducts threat-pattern analysis, constantly
 lowering detection thresholds to avoid false negatives.
 
-### Project New Threats from Mundane Data — Data Scope Creep
+### Project Threats from Non-Kinetic Data — Data Scope Creep
 
 The system extrapolates threats from innocent metadata: **political views, religion, academia,
 and web searches**, re-labeling civil liberties as preemptive hostile threats.
@@ -88,9 +88,9 @@ expanding the Tactical Threat Database and executing further preemptive eliminat
 with no natural brake.
 </div>
 
-## Enhanced Academic Taxonomy
+## Augmented Academic Taxonomy
 
-The enhanced framework augments the original blueprint with four formal stages, each anchored to
+The enhanced framework augments the baseline model with four formal stages, each anchored to
 a governing theory.
 
 1. **Military OODA Compression** — nations face game-theoretic pressures where human-approval latency (&#8805; 2000 ms) guarantees defeat against autonomous drone swarms. *Formal theory: Scharre (2018) Hyperwar Dynamics.*
@@ -100,6 +100,6 @@ a governing theory.
 
 <div class="callout cyan" markdown="1">
 **Explore each node** — every node above has a corresponding dossier in the
-[Interactive Dashboard]({{ '/dashboard/' | relative_url }}) with its handwritten transcription,
+[Interactive Dashboard]({{ '/dashboard/' | relative_url }}) with its node definition,
 academic parallel, threat-severity score, empirical precedent, and escalation mechanics.
 </div>

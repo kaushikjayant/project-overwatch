@@ -1,4 +1,4 @@
-# Project Overwatch — AI Runaway Scenario Evaluation & Scientific Verification
+# Project Overwatch
 
 A professional static site (Jekyll + GitHub Pages) documenting a scientific
 evaluation of the **catastrophic escalate-to-survive loop** in autonomous
@@ -52,7 +52,7 @@ The site can also be built remotely by GitHub Pages (no local Ruby required).
 The site is designed for a **project page**:
 
 - `url`: `https://<username>.github.io`
-- `baseurl`: `/ai-runaway-scenario-evaluation`
+- `baseurl`: `/project-overwatch`
 
 Update `_config.yml` (`url`, `baseurl`, `repository`, `github_username`) if you
 publish under a different repository or as a user/organization site

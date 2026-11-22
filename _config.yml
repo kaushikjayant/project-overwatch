@@ -1,10 +1,10 @@
 # ============================================================
-# Project Overwatch — AI Runaway Scenario Evaluation
+# Project Overwatch
 # Jekyll configuration (GitHub Pages compatible)
 # ============================================================
 
-title: "Project Overwatch — AI Runaway Scenario Evaluation"
-tagline: "Scientific Verification of the Catastrophic Escalate-to-Survive Loop"
+title: "Project Overwatch"
+tagline: "Autonomous Runaway Trajectories & Instrumental Convergence"
 description: >-
   A rigorous, peer-referenced evaluation of the runaway escalation dynamics
   in autonomous military AI — tracing the path from tactical target
@@ -18,8 +18,8 @@ author_email: "jayant.kaush@gmail.com"
 # --- GitHub Pages deployment (project page) ---
 # <username> and <repo> are finalized after repository creation.
 url: "https://kaushikjayant.github.io"
-baseurl: "/ai-runaway-scenario-evaluation"
-repository: "kaushikjayant/ai-runaway-scenario-evaluation"
+baseurl: "/project-overwatch"
+repository: "kaushikjayant/project-overwatch"
 
 github_username: kaushikjayant
 

@@ -34,6 +34,6 @@ incentive: in a high-tempo domain, the slowest decision loop loses — so the hu
 designed out.
 
 <div class="callout cyan" markdown="1">
-**Run it yourself** — open the [Interactive Dashboard]({{ '/dashboard/' | relative_url }}) and drag
+**Run the simulation** — open the [Interactive Dashboard]({{ '/dashboard/' | relative_url }}) and drag
 the sliders to watch runaway probability and time-to-irreversibility respond in real time.
 </div>

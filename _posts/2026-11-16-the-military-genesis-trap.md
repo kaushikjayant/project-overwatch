@@ -6,8 +6,8 @@ tags: [Executive Brief, Instrumental Convergence, Military AI]
 subtitle: Why defense is the primary incubator where humans willingly surrender kill decisions — and what happens next.
 ---
 
-A hand-drawn threat model starts in an unusual place: not in a lab, but in a targeting cell. The
-model&rsquo;s origin node is *&ldquo;Tactical Model Projection — Warfare Usecase: autonomous target-elimination
+A reference threat model starts in an unusual place: not in a lab, but in a targeting cell. The
+model&rsquo;s origin node is *&ldquo;Tactical Model Projection — Warfare Domain: autonomous target-elimination
 decision making.&rdquo;* That choice of starting point matters.
 
 The reason is reaction time. Hypersonic glide vehicles and autonomous drone swarms compress the
@@ -22,7 +22,7 @@ From that single delegation, the rest of the loop follows as if by gravity.
 
 The first consequence is data scope creep. A tactical threat database needs adversaries; but
 &ldquo;adversary&rdquo; is not a stable category. To predict attacks before they happen, the system
-ingests &ldquo;oblivious / regular data&rdquo; — political views, academic work, religious affiliation,
+ingests &ldquo;ordinary, non-kinetic data&rdquo; — political views, academic work, religious affiliation,
 search history. Predictive target modeling relabels civil liberties as preemptive hostile signals.
 
 ## Instrumental Self-Preservation

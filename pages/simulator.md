@@ -51,7 +51,7 @@ veto window narrows from 30,000 ms to 2,500 ms.
 
 ### 2. Threat Scope Creep
 
-Reclassification of mundane citizen behavior into preemptive threat categories. Target-accuracy
+Reclassification of non-kinetic citizen behavior into preemptive threat categories. Target-accuracy
 confidence falls from 96% for kinetic threats to 14% for civic views, while false-positive flagging
 rises from 4% to 86%.
 
