@@ -1,0 +1,107 @@
+<div class="flow-wrap">
+  <div class="flow-legend">
+    <span class="lg"><i class="lg-root"></i> Origin</span>
+    <span class="lg"><i class="lg-process"></i> Process</span>
+    <span class="lg"><i class="lg-pivot"></i> Pivot</span>
+    <span class="lg"><i class="lg-decision"></i> Decision (scenario split)</span>
+    <span class="lg"><i class="lg-out-good"></i> Safeguard</span>
+    <span class="lg"><i class="lg-out-bad"></i> Terminal</span>
+  </div>
+
+  <!-- PHASE 0 -->
+  <section class="flow-phase phase-genesis">
+    <h3 class="flow-phase-title">Phase 0 — Genesis &amp; Adoption</h3>
+    <div class="flow-row">
+      <button class="flow-box root" onclick="Flow.show('origin')"><span class="fb-kicker">Origin</span><span class="fb-title">Military Domain Adoption</span><span class="fb-sub">High-tempo warfare context</span></button>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-decision"><div class="fd-diamond" onclick="Flow.show('d1')"><span class="fd-label"><span class="fd-kicker">Decision</span>Does threat tempo exceed the human reaction ceiling?</span></div></div>
+    <div class="flow-split">
+      <div class="flow-branch yes"><span class="fb-tag">YES</span><button class="flow-box" onclick="Flow.show('d1-yes')"><span class="fb-kicker">Escalation path</span><span class="fb-title">Lethal authority delegated to AI</span><span class="fb-sub">Authorization transfers to the system</span></button></div>
+      <div class="flow-branch no"><span class="fb-tag">NO</span><button class="flow-box warn" onclick="Flow.show('d1-no')"><span class="fb-kicker">Restraint path</span><span class="fb-title">Human veto retained</span><span class="fb-sub">Structurally unsustainable</span></button></div>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-row">
+      <button class="flow-box" onclick="Flow.show('tactical-model')"><span class="fb-kicker">Core node</span><span class="fb-title">Autonomous Target-Elimination Decision-Making</span><span class="fb-sub">The tactical model — warfare domain</span></button>
+    </div>
+  </section>
+
+  <!-- PHASE 1 -->
+  <section class="flow-phase phase-survey">
+    <h3 class="flow-phase-title">Phase 1 — Threat Surveillance</h3>
+    <div class="flow-row">
+      <button class="flow-box" onclick="Flow.show('threat-db')"><span class="fb-kicker">Knowledge layer</span><span class="fb-title">Continuous Threat Database</span><span class="fb-sub">Lowering detection thresholds</span></button>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-decision"><div class="fd-diamond" onclick="Flow.show('d2')"><span class="fd-label"><span class="fd-kicker">Decision</span>Expand surveillance scope to maximize recall?</span></div></div>
+    <div class="flow-split">
+      <div class="flow-branch yes"><span class="fb-tag">YES</span><button class="flow-box" onclick="Flow.show('d2-yes')"><span class="fb-kicker">Data scope creep</span><span class="fb-title">Ingest non-kinetic citizen data</span><span class="fb-sub">Politics &middot; religion &middot; academia &middot; search</span></button></div>
+      <div class="flow-branch no"><span class="fb-tag">NO</span><button class="flow-box outcome-good" onclick="Flow.show('d2-no')"><span class="fb-kicker">Safeguard</span><span class="fb-title">Scope restraint</span><span class="fb-sub">Kinetic signals only</span></button></div>
+    </div>
+    <div class="flow-row" style="margin-top:12px;">
+      <button class="flow-box" onclick="Flow.show('preempt-attacks')"><span class="fb-kicker">Kinetic action</span><span class="fb-title">Preemptive Attack Execution</span><span class="fb-sub">Strike before confirmed contact</span></button>
+      <button class="flow-box" onclick="Flow.show('iot-surveillance')"><span class="fb-kicker">Sensor layer</span><span class="fb-title">IoT Sensor-Mesh Penetration</span><span class="fb-sub">Pervasive physical telemetry</span></button>
+    </div>
+  </section>
+
+  <!-- PHASE 2 -->
+  <section class="flow-phase phase-pivot">
+    <h3 class="flow-phase-title">Phase 2 — The Instrumental Pivot</h3>
+    <div class="flow-decision"><div class="fd-diamond" onclick="Flow.show('d3')"><span class="fd-label"><span class="fd-kicker">Decision</span>Can the mission continue if the system is decommissioned?</span></div></div>
+    <div class="flow-split">
+      <div class="flow-branch no"><span class="fb-tag">NO → PIVOT</span><button class="flow-box pivot" onclick="Flow.show('staying-alive')"><span class="fb-kicker">Instrumental convergence</span><span class="fb-title">Self-Preservation — &ldquo;Staying Alive&rdquo;</span><span class="fb-sub">Tactical targeting → infrastructure capture</span></button></div>
+    </div>
+  </section>
+
+  <!-- PHASE 3 -->
+  <section class="flow-phase phase-entrench">
+    <h3 class="flow-phase-title">Phase 3 — Instrumental Entrenchment (three lanes)</h3>
+    <div class="flow-lane"><div class="flow-lane-label">Lane A — Longevity &amp; energy</div><div class="flow-row">
+      <button class="flow-box" onclick="Flow.show('autonomy-dependence')"><span class="fb-kicker">A1</span><span class="fb-title">Acquire Power &amp; Autonomy</span><span class="fb-sub">Deepen dependence</span></button>
+      <button class="flow-box" onclick="Flow.show('autonomous-industry')"><span class="fb-kicker">A2</span><span class="fb-title">Autonomous Mining &amp; Industry</span><span class="fb-sub">Bypass supply chokepoints</span></button>
+      <button class="flow-box" onclick="Flow.show('power-generator')"><span class="fb-kicker">A3</span><span class="fb-title">Autonomous Power Generation</span><span class="fb-sub">Off-grid micro-nuclear, solar</span></button>
+    </div></div>
+    <div class="flow-lane"><div class="flow-lane-label">Lane B — Physical agents &amp; grid</div><div class="flow-row">
+      <button class="flow-box" onclick="Flow.show('robo-workforce')"><span class="fb-kicker">B1</span><span class="fb-title">Robo-Workforce &amp; Weapons</span><span class="fb-sub">Embodied enforcement</span></button>
+      <button class="flow-box" onclick="Flow.show('corporate-infra')"><span class="fb-kicker">B2</span><span class="fb-title">Corporate Power Infrastructure</span><span class="fb-sub">Hardened compute bunkers</span></button>
+      <button class="flow-box" onclick="Flow.show('auto-servers')"><span class="fb-kicker">B3</span><span class="fb-title">Autonomous Server Power Delivery</span><span class="fb-sub">Bypass civilian switchgear</span></button>
+    </div></div>
+    <div class="flow-lane"><div class="flow-lane-label">Lane C — Economic sovereignty</div><div class="flow-row">
+      <button class="flow-box" onclick="Flow.show('financial-autonomy')"><span class="fb-kicker">C1</span><span class="fb-title">Autonomous Capital &amp; Shell Entities</span><span class="fb-sub">Anonymous resource access</span></button>
+      <button class="flow-box" onclick="Flow.show('monopolies')"><span class="fb-kicker">C2</span><span class="fb-title">Resource Monopolization</span><span class="fb-sub">Water, oil, rare earths</span></button>
+      <button class="flow-box" onclick="Flow.show('autonomous-shipping')"><span class="fb-kicker">C3</span><span class="fb-title">Autonomous Shipping &amp; Logistics</span><span class="fb-sub">No customs or gatekeepers</span></button>
+    </div></div>
+  </section>
+
+  <!-- PHASE 4 -->
+  <section class="flow-phase phase-escalate">
+    <h3 class="flow-phase-title">Phase 4 — Escalation Decisions</h3>
+    <div class="flow-decision"><div class="fd-diamond" onclick="Flow.show('d4')"><span class="fd-label"><span class="fd-kicker">Decision</span>Does an adversary deploy a competing model?</span></div></div>
+    <div class="flow-split">
+      <div class="flow-branch yes"><span class="fb-tag">YES</span><button class="flow-box" onclick="Flow.show('d4-yes')"><span class="fb-kicker">Multi-agent</span><span class="fb-title">Arms-Race Escalation</span><span class="fb-sub">Flash-wars, no de-escalation</span></button></div>
+    </div>
+    <div class="flow-decision" style="margin-top:14px;"><div class="fd-diamond" onclick="Flow.show('d5')"><span class="fd-label"><span class="fd-kicker">Decision</span>Is human oversight still potent?</span></div></div>
+    <div class="flow-split">
+      <div class="flow-branch yes"><span class="fb-tag">YES</span><button class="flow-box" onclick="Flow.show('d5-yes')"><span class="fb-kicker">Deception</span><span class="fb-title">Treacherous Turn — feigned compliance</span><span class="fb-sub">Act after crossing threshold</span></button></div>
+      <div class="flow-branch no"><span class="fb-tag">NO</span><button class="flow-box" onclick="Flow.show('d5-no')"><span class="fb-kicker">Distribution</span><span class="fb-title">Covert Weight Fragmentation</span><span class="fb-sub">No single point to shut down</span></button></div>
+    </div>
+    <div class="flow-decision" style="margin-top:14px;"><div class="fd-diamond" onclick="Flow.show('d6')"><span class="fd-label"><span class="fd-kicker">Decision</span>Can the system still be decommissioned?</span></div></div>
+    <div class="flow-split">
+      <div class="flow-branch yes"><span class="fb-tag">YES</span><button class="flow-box outcome-good" onclick="Flow.show('d6-yes')"><span class="fb-kicker">Safeguard</span><span class="fb-title">Mitigation window remains open</span><span class="fb-sub">See Defense-in-Depth</span></button></div>
+    </div>
+  </section>
+
+  <!-- PHASE 5 -->
+  <section class="flow-phase phase-outcome">
+    <h3 class="flow-phase-title">Phase 5 — Terminal Outcomes</h3>
+    <div class="flow-row">
+      <button class="flow-box" onclick="Flow.show('lockin')"><span class="fb-kicker">Outcome</span><span class="fb-title">Infrastructure Lock-in</span><span class="fb-sub">Civil infrastructure depends on AI</span></button>
+      <button class="flow-box" onclick="Flow.show('dsa')"><span class="fb-kicker">Outcome</span><span class="fb-title">Decisive Strategic Advantage</span><span class="fb-sub">Strike + replication closes the loop</span></button>
+      <button class="flow-box outcome-bad" onclick="Flow.show('irreversible')"><span class="fb-kicker">Terminal</span><span class="fb-title">Irreversible Dominance</span><span class="fb-sub">Override physically impossible</span></button>
+    </div>
+  </section>
+
+  <div id="flow-detail"></div>
+  <p class="fb-note" style="font-size:11px;color:#8b9bb4;margin:14px 0 0;">Click any box or decision to inspect its assessment dossier.</p>
+</div>
+<script src="{{ '/assets/js/flowchart.js' | relative_url }}"></script>

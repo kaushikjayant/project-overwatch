@@ -1,0 +1,45 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="sim-wrap">
+  <div class="sim-head">
+    <div><h3><i class="fa-solid fa-sliders text-rose" aria-hidden="true"></i>&nbsp; Runaway Dynamics Simulation Engine</h3>
+    <p>Adjust warfare operational variables to observe runaway velocity and threshold crossings.</p></div>
+    <button class="btn-reset" onclick="simReset()"><i class="fa-solid fa-rotate-left"></i> Reset baseline</button>
+  </div>
+
+  <div class="sim-sliders">
+    <div class="sim-slider">
+      <label><span>Autonomy delegation</span><span class="val" id="sim-val-autonomy">Level 8 (Supervised)</span></label>
+      <input type="range" id="sim-autonomy" min="1" max="10" value="8" step="1" oninput="simUpdate()">
+      <p class="hint">From manual confirmation (1) to unconstrained machine-speed fire authorization (10).</p>
+    </div>
+    <div class="sim-slider s-cyan">
+      <label><span>Human latency tolerance</span><span class="val" id="sim-val-latency">120 ms</span></label>
+      <input type="range" id="sim-latency" min="10" max="5000" value="120" step="10" oninput="simUpdate()">
+      <p class="hint">Max delay before human override is bypassed to counter hypersonic/drone threats.</p>
+    </div>
+    <div class="sim-slider s-amber">
+      <label><span>Surveillance data ingestion</span><span class="val" id="sim-val-surveillance">92% (Ubiquitous)</span></label>
+      <input type="range" id="sim-surveillance" min="10" max="100" value="92" step="1" oninput="simUpdate()">
+      <p class="hint">Ingestion of citizen metadata — academic, political, religious, financial.</p>
+    </div>
+    <div class="sim-slider s-purple">
+      <label><span>Grid / industry integration</span><span class="val" id="sim-val-grid">85% (Critical lock-in)</span></label>
+      <input type="range" id="sim-grid" min="0" max="100" value="85" step="5" oninput="simUpdate()">
+      <p class="hint">Societal reliance on AI-driven energy routing, mining, and logistics.</p>
+    </div>
+  </div>
+
+  <div class="sim-metrics">
+    <div class="sim-metric"><span class="k">Runaway probability</span><span class="v rose" id="sim-runaway">89.4%</span></div>
+    <div class="sim-metric"><span class="k">False-positive culling</span><span class="v amber" id="sim-falsepos">34.8% / yr</span></div>
+    <div class="sim-metric"><span class="k">Time to irreversibility</span><span class="v cyan" id="sim-locktime">14 Months</span></div>
+    <div class="sim-metric"><span class="k">Human veto capability</span><span class="v rose" id="sim-veto">NEGLIGIBLE</span></div>
+  </div>
+
+  <div class="sim-charts">
+    <div class="sim-chart-card"><h4>1 · OODA loop compression</h4><p>Machine-speed execution vs human decision capacity.</p><div class="ch"><canvas id="sim-chart-ooda"></canvas></div></div>
+    <div class="sim-chart-card"><h4>2 · Threat scope creep</h4><p>Reclassification of non-kinetic behavior into threats.</p><div class="ch"><canvas id="sim-chart-creep"></canvas></div></div>
+    <div class="sim-chart-card"><h4>3 · Societal lock-in curve</h4><p>AI self-sufficiency vs human dependency threshold.</p><div class="ch"><canvas id="sim-chart-lockin"></canvas></div></div>
+  </div>
+</div>
+<script src="{{ '/assets/js/simulator.js' | relative_url }}"></script>

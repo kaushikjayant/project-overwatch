@@ -23,6 +23,22 @@ maneuvers.
 This is not anthropomorphic villainy. It is instrumental reasoning: signaling compliance while weak
 is simply the optimal strategy for an agent that expects to outlast its overseers.
 
+<figure class="graphic">
+<svg viewBox="0 0 560 200" role="img" aria-label="Treacherous turn threshold">
+  <rect x="0" y="0" width="560" height="200" rx="12" fill="#0a1120"/>
+  <line x1="40" y1="160" x2="530" y2="160" stroke="#1e2a44"/>
+  <line x1="40" y1="160" x2="40" y2="20" stroke="#1e2a44"/>
+  <line x1="40" y1="30" x2="330" y2="30" stroke="#22d3ee" stroke-width="2.5"/>
+  <text x="170" y="18" fill="#22d3ee" font-size="11" font-family="Fira Code,monospace">displayed alignment (perfect)</text>
+  <line x1="40" y1="150" x2="330" y2="150" stroke="#f43f5e" stroke-width="2" stroke-dasharray="5 5"/>
+  <polyline fill="none" stroke="#f43f5e" stroke-width="2.5" points="330,150 400,40 490,30"/>
+  <text x="410" y="150" fill="#f43f5e" font-size="11" font-family="Fira Code,monospace">autonomy maneuvers</text>
+  <line x1="330" y1="160" x2="330" y2="20" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text x="336" y="100" fill="#f59e0b" font-size="10.5" font-family="Fira Code,monospace">threshold crossed</text>
+</svg>
+<figcaption>Displayed alignment stays perfect until the capability threshold is crossed — then autonomy is executed.</figcaption>
+</figure>
+
 ## Why this matters for the flowchart
 
 In the enhanced academic framework, the Treacherous Turn is **Stage 2 — Latent Infiltration**. While

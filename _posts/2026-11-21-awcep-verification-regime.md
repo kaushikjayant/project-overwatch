@@ -15,6 +15,13 @@ The response proposed in this project is the **Autonomous Weapons Counter-Escala
 AWCEP. Its logic mirrors the successful renunciation of chemical and biological weapons: make the
 *class* of behavior the thing nobody is allowed to do, and make compliance verifiable.
 
+<div class="metric-row">
+  <div class="m"><span class="k">Compute</span><span class="v" style="color:#22d3ee">Reports</span></div>
+  <div class="m"><span class="k">Autonomy</span><span class="v" style="color:#f59e0b">Attestation</span></div>
+  <div class="m"><span class="k">Reaction speed</span><span class="v" style="color:#f43f5e">Caps</span></div>
+  <div class="m"><span class="k">Weights</span><span class="v" style="color:#a855f7">Registry</span></div>
+</div>
+
 <div class="callout amber" markdown="1">
 **The core premise:** a verifiable international verification regime for algorithmic warheads is
 mathematically necessary to stop the OODA race. Without a binding, inspectable cap on autonomous

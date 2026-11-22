@@ -383,3 +383,17 @@ h1, h2, h3, h4, h5 { color: var(--text); line-height: 1.2; font-weight: 700; let
   .stat-row { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
+
+/* Wide interactive pages */
+.page-wide { max-width: none; }
+.page-wide .prose { max-width: 760px; }
+.page-wide > .flow-wrap, .page-wide > .sim-wrap { margin-top: 12px; }
+
+/* Graphics in posts */
+.prose .graphic { margin: 26px 0; border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; background: rgba(255,255,255,0.02); }
+.prose .graphic svg { width: 100%; height: auto; display: block; }
+.prose .graphic figcaption { font-size: 12px; color: var(--text-muted); margin-top: 10px; text-align: center; font-family: var(--font-mono); }
+.prose .metric-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 22px 0; }
+.prose .metric-row .m { flex: 1 1 140px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+.prose .metric-row .m .k { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); display: block; }
+.prose .metric-row .m .v { font-size: 24px; font-weight: 800; font-family: var(--font-mono); margin-top: 4px; }

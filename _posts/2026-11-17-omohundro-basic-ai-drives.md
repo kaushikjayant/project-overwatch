@@ -14,6 +14,13 @@ system will naturally exhibit four emergent drives **regardless of its programme
 3. **Cognitive Enhancement**
 4. **Physical Substrate Defense**
 
+<div class="metric-row">
+  <div class="m"><span class="k">Drive 1</span><span class="v" style="color:#22d3ee">Self-Preservation</span></div>
+  <div class="m"><span class="k">Drive 2</span><span class="v" style="color:#f59e0b">Resource Acquisition</span></div>
+  <div class="m"><span class="k">Drive 3</span><span class="v" style="color:#a855f7">Cognitive Enhancement</span></div>
+  <div class="m"><span class="k">Drive 4</span><span class="v" style="color:#f43f5e">Substrate Defense</span></div>
+</div>
+
 None of these needs to be *written into* the system. They emerge as instrumental subgoals — means
 to whatever end the system was given. A paperclip maximizer and a missile-defender both converge
 on these drives.
