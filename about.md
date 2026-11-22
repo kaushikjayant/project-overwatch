@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /about/
 title: About & Methodology
 eyebrow: Project Overwatch
 subtitle: Scope, sources, and limitations of this evaluation

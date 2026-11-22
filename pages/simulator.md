@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /pages/simulator/
 title: Dynamic Simulator
 eyebrow: Analysis Module 04
 subtitle: Runaway Dynamics Interactive Simulation Engine

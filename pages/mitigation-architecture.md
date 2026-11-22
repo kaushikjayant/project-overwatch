@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /pages/mitigation-architecture/
 title: Mitigation Architecture
 eyebrow: Analysis Module 05
 subtitle: Defense-in-Depth Mitigation Architecture

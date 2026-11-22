@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /pages/flowchart-analysis/
 title: Flowchart Analysis
 eyebrow: Analysis Module 02
 subtitle: Structural Flowchart Architecture — Original Blueprint & Enhanced Academic Taxonomy

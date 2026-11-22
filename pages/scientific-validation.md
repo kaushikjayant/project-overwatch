@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /pages/scientific-validation/
 title: Scientific Validation
 eyebrow: Analysis Module 03
 subtitle: Academic & Empirical Verification Matrix

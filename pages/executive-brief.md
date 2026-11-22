@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /pages/executive-brief/
 title: Executive Brief
 eyebrow: Analysis Module 01
 subtitle: Handwritten Projection Verification — the Catastrophic Escalate-to-Survive Loop
