@@ -36,6 +36,7 @@ plugins:
 
 feed:
   path: feed.xml
+  posts_limit: 30
 
 defaults:
   - scope:
