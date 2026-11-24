@@ -113,3 +113,4 @@
 .flow-wrap .mermaid { overflow-x: auto; padding: 6px 0 2px; text-align: center; }
 .flow-wrap .mermaid svg { max-width: 100%; height: auto; margin: 0 auto; }
 .flow-wrap .mermaid .node rect, .flow-wrap .mermaid .node polygon { cursor: pointer; }
+.flow-wrap .flow-title { margin: 24px 0 10px; font-family:'Fira Code',monospace; font-size:12px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:#8b9bb4; border-bottom:1px solid #1e2a44; padding-bottom:6px; }

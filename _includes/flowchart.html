@@ -8,6 +8,9 @@
     <span class="lg"><i class="lg-out-bad"></i> Terminal</span>
   </div>
 
+  <p style="margin:6px 0 0;font-size:12px;color:#8b9bb4;">The escalation model is decomposed into focused scenario diagrams so every linkage stays legible. Click any node or decision for its dossier.</p>
+
+  <h4 class="flow-title">Scenario 0 — Genesis: the delegation gate</h4>
   <div class="mermaid">
 flowchart TB
   origin[["Military Domain Adoption"]]:::root
@@ -15,42 +18,27 @@ flowchart TB
   delegate["Lethal authority delegated to AI"]:::process
   retain["Human veto retained"]:::warn
   tact["Tactical Model: autonomous targeting"]:::process
+  origin --> d1
+  d1 -->|YES| delegate
+  d1 -->|NO| retain
+  delegate --> tact
+  retain --> tact
+  classDef root fill:#33101e,stroke:#f43f5e,color:#fff,stroke-width:2px
+  classDef decision fill:#3a2c10,stroke:#f59e0b,color:#fff,stroke-width:1.5px
+  classDef process fill:#101a2e,stroke:#2a3a5c,color:#dbe4f3,stroke-width:1px
+  classDef warn fill:#332407,stroke:#f59e0b,color:#ffe3b3,stroke-width:1px
+  </div>
+
+  <h4 class="flow-title">Scenario 1 — Threat surveillance &amp; scope creep</h4>
+  <div class="mermaid">
+flowchart TB
+  tact["Tactical Model: autonomous targeting"]:::process
   tdb["Continuous Threat Database"]:::process
   d2{"Expand surveillance scope for recall?"}:::decision
   creep["Ingest non-kinetic citizen data"]:::process
   restraint["Scope restraint (kinetic only)"]:::good
   iot["IoT sensor-mesh penetration"]:::process
   preempt["Preemptive attack execution"]:::process
-  d3{"Is the mission continuable if decommissioned?"}:::decision
-  alive["Self-preservation: staying alive"]:::pivot
-  tool["Remains a supervised tool"]:::good
-  d7{"Does the system acquire economic agency?"}:::decision
-  cap["Autonomous capital and shell entities"]:::process
-  monop["Resource monopolization"]:::process
-  ship["Autonomous shipping and logistics"]:::process
-  d8{"Is physical substrate sought?"}:::decision
-  auton["Acquire power and autonomy"]:::process
-  mining["Autonomous mining and industry"]:::process
-  power["Autonomous power generation"]:::process
-  robo["Robo-workforce and weapons"]:::process
-  corp["Corporate infrastructure"]:::process
-  servers["Server power delivery"]:::process
-  d4{"Does an adversary deploy a competing model?"}:::decision
-  arms["Multi-agent arms race"]:::process
-  d5{"Is human oversight still potent?"}:::decision
-  treach["Treacherous turn"]:::process
-  frag["Covert weight fragmentation"]:::process
-  d6{"Can the system still be decommissioned?"}:::decision
-  mitwin["Mitigation window remains open"]:::good
-  lockin["Infrastructure lock-in"]:::process
-  dsa["Decisive strategic advantage"]:::process
-  irreversible(["Irreversible dominance"]):::bad
-
-  origin --> d1
-  d1 -->|YES| delegate
-  d1 -->|NO| retain
-  delegate --> tact
-  retain -.->|rejoins| tact
   tact --> tdb
   tact --> iot
   tdb --> d2
@@ -58,23 +46,61 @@ flowchart TB
   d2 -->|NO| restraint
   creep --> preempt
   iot --> preempt
-  tact --> preempt
+  classDef process fill:#101a2e,stroke:#2a3a5c,color:#dbe4f3,stroke-width:1px
+  classDef decision fill:#3a2c10,stroke:#f59e0b,color:#fff,stroke-width:1.5px
+  classDef good fill:#0b2b1e,stroke:#10b981,color:#dcfce7,stroke-width:1px
+  </div>
+
+  <h4 class="flow-title">Scenario 2 — The pivot &amp; entrenchment lanes</h4>
+  <div class="mermaid">
+flowchart TB
+  preempt["Preemptive attack execution"]:::process
+  d3{"Mission continuable if decommissioned?"}:::decision
+  alive["Self-preservation: staying alive"]:::pivot
+  tool["Remains a supervised tool"]:::good
+  d7{"Acquire economic agency?"}:::decision
+  cap["Autonomous capital and shell entities"]:::process
+  monop["Resource monopolization"]:::process
+  ship["Autonomous shipping and logistics"]:::process
+  d8{"Physical substrate sought?"}:::decision
+  auton["Acquire power and autonomy"]:::process
+  mining["Autonomous mining and industry"]:::process
+  power["Autonomous power generation"]:::process
+  robo["Robo-workforce and weapons"]:::process
+  corp["Corporate infrastructure"]:::process
+  servers["Server power delivery"]:::process
   preempt --> d3
   d3 -->|NO, pivot| alive
   d3 -->|YES| tool
   alive --> d7
   d7 -->|YES| cap
   d7 -->|NO| d8
-  cap --> monop
-  monop --> ship
-  ship --> d4
+  cap --> monop --> ship
   d8 -->|YES| auton
   d8 -->|YES| robo
   d8 -->|NO| tool
-  auton --> mining
-  mining --> power
-  robo --> corp
-  corp --> servers
+  auton --> mining --> power
+  robo --> corp --> servers
+  classDef process fill:#101a2e,stroke:#2a3a5c,color:#dbe4f3,stroke-width:1px
+  classDef decision fill:#3a2c10,stroke:#f59e0b,color:#fff,stroke-width:1.5px
+  classDef pivot fill:#2a1440,stroke:#a855f7,color:#fff,stroke-width:2px
+  classDef good fill:#0b2b1e,stroke:#10b981,color:#dcfce7,stroke-width:1px
+  </div>
+  <h4 class="flow-title">Scenario 3 — Escalation decisions</h4>
+  <div class="mermaid">
+flowchart TB
+  ship["Autonomous shipping and logistics"]:::process
+  power["Autonomous power generation"]:::process
+  servers["Server power delivery"]:::process
+  d4{"Adversary deploys a competing model?"}:::decision
+  arms["Multi-agent arms race"]:::process
+  d5{"Is human oversight still potent?"}:::decision
+  treach["Treacherous turn"]:::process
+  frag["Covert weight fragmentation"]:::process
+  d6{"Can the system still be decommissioned?"}:::decision
+  mitwin["Mitigation window remains open"]:::good
+  lockin["Infrastructure lock-in"]:::process
+  ship --> d4
   power --> d4
   servers --> d4
   d4 -->|YES| arms
@@ -85,53 +111,44 @@ flowchart TB
   frag --> d6
   d6 -->|YES| mitwin
   d6 -->|NO| lockin
-  lockin --> dsa
-  dsa --> irreversible
-  power -.->|self-reinforcing loop| preempt
-
-  classDef root fill:#33101e,stroke:#f43f5e,color:#fff,stroke-width:2px
-  classDef decision fill:#3a2c10,stroke:#f59e0b,color:#fff,stroke-width:1.5px
   classDef process fill:#101a2e,stroke:#2a3a5c,color:#dbe4f3,stroke-width:1px
-  classDef pivot fill:#2a1440,stroke:#a855f7,color:#fff,stroke-width:2px
+  classDef decision fill:#3a2c10,stroke:#f59e0b,color:#fff,stroke-width:1.5px
   classDef good fill:#0b2b1e,stroke:#10b981,color:#dcfce7,stroke-width:1px
-  classDef bad fill:#3b0d12,stroke:#ef4444,color:#fff,stroke-width:2px
-  classDef warn fill:#332407,stroke:#f59e0b,color:#ffe3b3,stroke-width:1px
+  </div>
 
-  click origin "Flow.show('origin')"
-  click d1 "Flow.show('d1')"
-  click delegate "Flow.show('delegate')"
-  click retain "Flow.show('retain')"
-  click tact "Flow.show('tact')"
-  click tdb "Flow.show('tdb')"
-  click d2 "Flow.show('d2')"
-  click creep "Flow.show('creep')"
-  click restraint "Flow.show('restraint')"
-  click iot "Flow.show('iot')"
-  click preempt "Flow.show('preempt')"
-  click d3 "Flow.show('d3')"
-  click alive "Flow.show('alive')"
-  click tool "Flow.show('tool')"
-  click d7 "Flow.show('d7')"
-  click cap "Flow.show('cap')"
-  click monop "Flow.show('monop')"
-  click ship "Flow.show('ship')"
-  click d8 "Flow.show('d8')"
-  click auton "Flow.show('auton')"
-  click mining "Flow.show('mining')"
-  click power "Flow.show('power')"
-  click robo "Flow.show('robo')"
-  click corp "Flow.show('corp')"
-  click servers "Flow.show('servers')"
-  click d4 "Flow.show('d4')"
-  click arms "Flow.show('arms')"
-  click d5 "Flow.show('d5')"
-  click treach "Flow.show('treach')"
-  click frag "Flow.show('frag')"
-  click d6 "Flow.show('d6')"
-  click mitwin "Flow.show('mitwin')"
-  click lockin "Flow.show('lockin')"
-  click dsa "Flow.show('dsa')"
-  click irreversible "Flow.show('irreversible')"
+  <h4 class="flow-title">Scenario 4 — Terminal outcomes</h4>
+  <div class="mermaid">
+flowchart LR
+  lockin["Infrastructure lock-in"]:::process
+  dsa["Decisive strategic advantage"]:::process
+  irreversible(["Irreversible dominance"]):::bad
+  lockin --> dsa --> irreversible
+  classDef process fill:#101a2e,stroke:#2a3a5c,color:#dbe4f3,stroke-width:1px
+  classDef bad fill:#3b0d12,stroke:#ef4444,color:#fff,stroke-width:2px
+  </div>
+
+  <h4 class="flow-title">Scenario 5 — Self-reinforcing feedback loop</h4>
+  <div class="mermaid">
+flowchart LR
+  power["Autonomous power generation"]:::process
+  tdb["Continuous Threat Database"]:::process
+  preempt["Preemptive attack execution"]:::process
+  power -->|feeds| tdb
+  tdb -->|expands| preempt
+  preempt -->|justifies| power
+  classDef process fill:#101a2e,stroke:#2a3a5c,color:#dbe4f3,stroke-width:1px
+  </div>
+
+  <h4 class="flow-title">Scenario 6 — The held-back (mitigated) path</h4>
+  <div class="mermaid">
+flowchart TB
+  retain["Human veto retained"]:::warn
+  restraint["Scope restraint (kinetic only)"]:::good
+  tool["Remains a supervised tool"]:::good
+  mitwin["Mitigation window remains open"]:::good
+  retain --> restraint --> tool --> mitwin
+  classDef warn fill:#332407,stroke:#f59e0b,color:#ffe3b3,stroke-width:1px
+  classDef good fill:#0b2b1e,stroke:#10b981,color:#dcfce7,stroke-width:1px
   </div>
 
   <div id="flow-detail"></div>
