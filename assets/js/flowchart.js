@@ -54,29 +54,23 @@ var Flow = {
   },
   wire: function(){
     var wrap = document.querySelector('.flow-wrap'); if(!wrap) return;
-    wrap.querySelectorAll('svg g.node').forEach(function(g){
-      var id = g.id || '';
-      if (id.indexOf('flowchart-') === 0) {
-        var key = id.replace(/^flowchart-/,'').replace(/-[0-9]+$/,'');
-        if (FlowNodes[key]) { g.style.cursor='pointer'; g.addEventListener('click', function(){ Flow.show(key); }); }
+    wrap.querySelectorAll('[data-flow-node]').forEach(function(el){
+      var key = el.getAttribute('data-flow-node');
+      if (FlowNodes[key]) {
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', function(){ Flow.show(key); });
+        el.addEventListener('keydown', function(e){
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); Flow.show(key); }
+        });
       }
     });
   },
   init: function(){
-    if (typeof mermaid !== 'undefined') {
-      mermaid.initialize({
-        startOnLoad: false, securityLevel: 'loose', theme: 'base',
-        flowchart: { useMaxWidth: true, htmlLabels: false, curve: 'linear', nodeSpacing: 40, rankSpacing: 48 },
-        themeVariables: {
-          background: '#070c16', primaryColor: '#101a2e', primaryTextColor: '#dbe4f3', primaryBorderColor: '#26334f',
-          secondaryColor: '#0d1626', tertiaryColor: '#0a1120', lineColor: '#3b4f78', textColor: '#e6edf7',
-          fontSize: '13px', fontFamily: 'Inter, ui-sans-serif, system-ui, sans-serif'
-        }
-      });
-      try {
-        mermaid.run({ querySelector: '.flow-wrap .mermaid' }).then(function(){ Flow.wire(); }).catch(function(e){ console.warn('mermaid', e); });
-      } catch(e) {}
-    }
+    this.wire();
   }
 };
-Flow.init();
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', function(){ Flow.init(); });
+} else {
+  Flow.init();
+}

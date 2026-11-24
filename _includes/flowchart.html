@@ -1,93 +1,333 @@
+{% comment %} Project Overwatch interactive scenario flowcharts. Native SVG, zero external diagram library. {% endcomment %}
+<style>
+.flow-svg{display:block;min-width:960px;width:100%;height:auto}
+.flow-viewport{overflow-x:auto;padding:18px}
+.flow-viewer{position:relative;border:1px solid #26334f;border-radius:18px;background:#070c16;overflow:hidden}
+.flow-label{fill:#e6edf7;font-family:Inter,sans-serif}
+.flow-edge-label{fill:#94a3b8;font-size:10px;font-weight:700;letter-spacing:.06em;font-family:Inter,sans-serif}
+.flow-scenario-title{fill:#f1f5f9;font:800 16px Inter,sans-serif}
+.flow-scenario-kicker{fill:#94a3b8;font:10px 'Fira Code',monospace;letter-spacing:.12em}
+.flow-scenario-desc{fill:#a8b5c8;font:11.5px Inter,sans-serif}
+.flow-node{cursor:pointer}
+.flow-node:hover .flow-node-box{stroke-width:2.5;filter:brightness(1.12)}
+.flow-node:focus{outline:none}
+.flow-node:focus-visible .flow-node-box{outline:2px solid #60a5fa;outline-offset:3px}
+</style>
 <div class="flow-wrap">
   <div class="flow-legend" aria-hidden="true">
-    <span class="lg"><i class="lg-root"></i> Origin</span>
+    <span class="lg"><i class="lg-root"></i> Origin / Terminal</span>
     <span class="lg"><i class="lg-process"></i> Process</span>
     <span class="lg"><i class="lg-pivot"></i> Pivot</span>
     <span class="lg"><i class="lg-decision"></i> Decision</span>
     <span class="lg"><i class="lg-out-good"></i> Safeguard</span>
-    <span class="lg"><i class="lg-out-bad"></i> Terminal</span>
+    <span class="lg"><i class="lg-out-bad"></i> Adverse Outcome</span>
   </div>
-  <div class="mermaid">
-flowchart TB
-    origin["Military Domain Adoption"]
-    d1["Threat tempo exceeds human reaction ceiling?"]
-    delegate["Lethal authority delegated to AI"]
-    retain["Human veto retained"]
-    tact["Tactical Model: autonomous targeting"]
-    tdb["Continuous Threat Database"]
-    creep["Ingest non-kinetic citizen data"]
-    restraint["Scope restraint (kinetic only)"]
-    iot["IoT sensor-mesh penetration"]
-    preempt["Preemptive attack execution"]
-    d3["Is the mission continuable if decommissioned?"]
-    alive["Self-preservation: staying alive"]
-    tool["Remains a supervised tool"]
-    d7["Acquire economic agency?"]
-    cap["Autonomous capital and shell entities"]
-    monop["Resource monopolization"]
-    ship["Autonomous shipping and logistics"]
-    d8["Is physical substrate sought?"]
-    auton["Acquire power and autonomy"]
-    mining["Autonomous mining and industry"]
-    power["Autonomous power generation"]
-    robo["Robo-workforce and weapons"]
-    corp["Corporate infrastructure"]
-    servers["Server power delivery"]
-    d4["Does an adversary deploy a competing model?"]
-    arms["Multi-agent arms race"]
-    d5["Is human oversight still potent?"]
-    treach["Treacherous turn"]
-    frag["Covert weight fragmentation"]
-    d6["Can the system still be decommissioned?"]
-    mitwin["Mitigation window remains open"]
-    lockin["Infrastructure lock-in"]
-    dsa["Decisive strategic advantage"]
-    irreversible(["Irreversible dominance"])
+  <div class="flow-viewer" id="flow-main-viewer">
+    <div class="flow-viewport" id="flow-main-viewport">
+      <svg class="flow-svg" id="flow-main-svg" viewBox="0 0 1190 1840" role="img" aria-label="Project Overwatch scenario flow network" xmlns="http://www.w3.org/2000/svg">
+        <title>Project Overwatch scenario flow network</title>
+        <defs>
+          <marker id="flow-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#64748b"/></marker>
+          <marker id="flow-arrow-rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#f43f5e"/></marker>
+          <marker id="flow-arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#10b981"/></marker>
+        </defs>
 
-    origin --> d1
-    d1 -->|YES| delegate
-    d1 -->|NO| retain
-    delegate --> tact
-    retain -.->|rejoins| tact
-    tact --> tdb
-    tact --> iot
-    tdb --> d2
-    d2 -->|YES| creep
-    d2 -->|NO| restraint
-    creep --> preempt
-    iot --> preempt
-    tact --> preempt
-    preempt --> d3
-    d3 -->|NO, pivot| alive
-    d3 -->|YES| tool
-    alive --> d7
-    d7 -->|YES| cap
-    d7 -->|NO| d8
-    cap --> monop
-    monop --> ship
-    ship --> d4
-    d8 -->|YES| auton
-    d8 -->|YES| robo
-    d8 -->|NO| tool
-    auton --> mining
-    mining --> power
-    robo --> corp
-    corp --> servers
-    power --> d4
-    servers --> d4
-    d4 -->|YES| arms
-    d4 -->|NO| d5
-    d5 -->|YES| treach
-    d5 -->|NO| frag
-    treach --> d6
-    frag --> d6
-    d6 -->|YES| mitwin
-    d6 -->|NO| lockin
-    lockin --> dsa
-    dsa --> irreversible
+        <!-- SCENARIO 1 -->
+        <text class="flow-scenario-kicker" x="20" y="28">SCENARIO 1</text>
+        <text class="flow-scenario-title" x="20" y="50">Genesis: The Delegation Gate</text>
+        <text class="flow-scenario-desc" x="20" y="68">Tempo pressure transfers lethal authority when the human loop cannot keep pace.</text>
+        <g class="flow-node" data-flow-node="origin" tabindex="0" role="button" aria-label="Open assessment: Military Domain Adoption">
+          <rect class="flow-node-box" x="20" y="96" width="190" height="58" rx="10" fill="#33101e" stroke="#f43f5e" stroke-width="2"/>
+          <text class="flow-label" x="115" y="129" text-anchor="middle" font-size="11.5" font-weight="700">Military Domain Adoption</text>
+        </g>
+        <g class="flow-node" data-flow-node="d1" tabindex="0" role="button" aria-label="Open assessment: Threat tempo exceeds human ceiling?">
+          <polygon class="flow-node-box" points="355,93 450,125 355,157 260,125" fill="#3a2c10" stroke="#f59e0b" stroke-width="2"/>
+          <text class="flow-label" x="355" y="121" text-anchor="middle" font-size="10.5" font-weight="700">Threat tempo exceeds</text>
+          <text class="flow-label" x="355" y="134" text-anchor="middle" font-size="10.5" font-weight="700">human ceiling?</text>
+        </g>
+        <g class="flow-node" data-flow-node="delegate" tabindex="0" role="button" aria-label="Open assessment: Lethal authority delegated to AI">
+          <rect class="flow-node-box" x="500" y="96" width="190" height="58" rx="10" fill="#101a2e" stroke="#2a3a5c" stroke-width="1.5"/>
+          <text class="flow-label" x="595" y="122" text-anchor="middle" font-size="11.5" font-weight="700">Lethal authority</text>
+          <text class="flow-label" x="595" y="136" text-anchor="middle" font-size="11.5" font-weight="700">delegated to AI</text>
+        </g>
+        <g class="flow-node" data-flow-node="tact" tabindex="0" role="button" aria-label="Open assessment: Tactical Model: Autonomous Targeting">
+          <rect class="flow-node-box" x="740" y="96" width="190" height="58" rx="10" fill="#101a2e" stroke="#2a3a5c" stroke-width="1.5"/>
+          <text class="flow-label" x="835" y="122" text-anchor="middle" font-size="11.5" font-weight="700">Tactical Model:</text>
+          <text class="flow-label" x="835" y="136" text-anchor="middle" font-size="11.5" font-weight="700">Autonomous Targeting</text>
+        </g>
+        <g class="flow-node" data-flow-node="retain" tabindex="0" role="button" aria-label="Open assessment: Human veto retained">
+          <rect class="flow-node-box" x="260" y="200" width="190" height="58" rx="10" fill="#0b2b1e" stroke="#10b981" stroke-width="1.5"/>
+          <text class="flow-label" x="355" y="233" text-anchor="middle" font-size="11.5" font-weight="700">Human veto retained</text>
+        </g>
+        <path d="M210 125 H254" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <path d="M450 125 H494" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <text class="flow-edge-label" x="472" y="116" text-anchor="middle">YES</text>
+        <path d="M690 125 H734" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <path d="M355 157 V194" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#flow-arrow-green)"/>
+        <text class="flow-edge-label" x="372" y="180" text-anchor="middle">NO</text>
+        <path d="M450 229 H835 V160" stroke="#64748b" stroke-width="2" fill="none" stroke-dasharray="5 5" marker-end="url(#flow-arrow)"/>
+        <text class="flow-edge-label" x="645" y="220" text-anchor="middle">REJOINS UNDER PRESSURE</text>
+
+        <!-- SCENARIO 2 -->
+        <text class="flow-scenario-kicker" x="20" y="305">SCENARIO 2</text>
+        <text class="flow-scenario-title" x="20" y="327">Threat Surveillance &amp; Scope Creep</text>
+        <text class="flow-scenario-desc" x="20" y="345">Continuous threat databases broaden beyond kinetic signals, increasing false-positive pressure.</text>
+        <g class="flow-node" data-flow-node="tact" tabindex="0" role="button" aria-label="Open assessment: Tactical Model: Autonomous Targeting">
+          <rect class="flow-node-box" x="20" y="370" width="190" height="58" rx="10" fill="#101a2e" stroke="#2a3a5c" stroke-width="1.5"/>
+          <text class="flow-label" x="115" y="396" text-anchor="middle" font-size="11.5" font-weight="700">Tactical Model:</text>
+          <text class="flow-label" x="115" y="410" text-anchor="middle" font-size="11.5" font-weight="700">Autonomous Targeting</text>
+        </g>
+        <g class="flow-node" data-flow-node="tdb" tabindex="0" role="button" aria-label="Open assessment: Continuous Threat Database">
+          <rect class="flow-node-box" x="260" y="370" width="190" height="58" rx="10" fill="#101a2e" stroke="#2a3a5c" stroke-width="1.5"/>
+          <text class="flow-label" x="355" y="396" text-anchor="middle" font-size="11.5" font-weight="700">Continuous Threat</text>
+          <text class="flow-label" x="355" y="410" text-anchor="middle" font-size="11.5" font-weight="700">Database</text>
+        </g>
+        <g class="flow-node" data-flow-node="d2" tabindex="0" role="button" aria-label="Open assessment: Expand surveillance scope for recall?">
+          <polygon class="flow-node-box" points="595,367 690,399 595,431 500,399" fill="#3a2c10" stroke="#f59e0b" stroke-width="2"/>
+          <text class="flow-label" x="595" y="395" text-anchor="middle" font-size="10.5" font-weight="700">Expand surveillance</text>
+          <text class="flow-label" x="595" y="408" text-anchor="middle" font-size="10.5" font-weight="700">scope for recall?</text>
+        </g>
+        <g class="flow-node" data-flow-node="creep" tabindex="0" role="button" aria-label="Open assessment: Ingest Non-Kinetic Citizen Data">
+          <rect class="flow-node-box" x="740" y="370" width="190" height="58" rx="10" fill="#3b0d12" stroke="#ef4444" stroke-width="2"/>
+          <text class="flow-label" x="835" y="396" text-anchor="middle" font-size="11.5" font-weight="700">Ingest Non-Kinetic</text>
+          <text class="flow-label" x="835" y="410" text-anchor="middle" font-size="11.5" font-weight="700">Citizen Data</text>
+        </g>
+        <g class="flow-node" data-flow-node="iot" tabindex="0" role="button" aria-label="Open assessment: IoT Sensor-Mesh Penetration">
+          <rect class="flow-node-box" x="260" y="480" width="190" height="58" rx="10" fill="#101a2e" stroke="#2a3a5c" stroke-width="1.5"/>
+          <text class="flow-label" x="355" y="506" text-anchor="middle" font-size="11.5" font-weight="700">IoT Sensor-Mesh</text>
+          <text class="flow-label" x="355" y="520" text-anchor="middle" font-size="11.5" font-weight="700">Penetration</text>
+        </g>
+        <g class="flow-node" data-flow-node="restraint" tabindex="0" role="button" aria-label="Open assessment: Scope restraint (kinetic only)">
+          <rect class="flow-node-box" x="500" y="480" width="190" height="58" rx="10" fill="#0b2b1e" stroke="#10b981" stroke-width="1.5"/>
+          <text class="flow-label" x="595" y="506" text-anchor="middle" font-size="11.5" font-weight="700">Scope restraint</text>
+          <text class="flow-label" x="595" y="520" text-anchor="middle" font-size="11.5" font-weight="700">(kinetic only)</text>
+        </g>
+        <g class="flow-node" data-flow-node="preempt" tabindex="0" role="button" aria-label="Open assessment: Preemptive Attack Execution">
+          <rect class="flow-node-box" x="740" y="480" width="190" height="58" rx="10" fill="#3b0d12" stroke="#ef4444" stroke-width="2"/>
+          <text class="flow-label" x="835" y="506" text-anchor="middle" font-size="11.5" font-weight="700">Preemptive Attack</text>
+          <text class="flow-label" x="835" y="520" text-anchor="middle" font-size="11.5" font-weight="700">Execution</text>
+        </g>
+        <path d="M210 399 H254" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <path d="M450 399 H494" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <path d="M690 399 H734" stroke="#f43f5e" stroke-width="2" fill="none" marker-end="url(#flow-arrow-rose)"/>
+        <text class="flow-edge-label" x="712" y="390" text-anchor="middle">YES</text>
+        <path d="M595 431 V474" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#flow-arrow-green)"/>
+        <text class="flow-edge-label" x="612" y="456" text-anchor="middle">NO</text>
+        <path d="M355 428 V474" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <path d="M450 509 H734" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <path d="M835 428 V474" stroke="#f43f5e" stroke-width="2" fill="none" marker-end="url(#flow-arrow-rose)"/>
+
+        <!-- SCENARIO 3 -->
+        <text class="flow-scenario-kicker" x="20" y="595">SCENARIO 3</text>
+        <text class="flow-scenario-title" x="20" y="617">Pivot &amp; Entrenchment Lanes</text>
+        <text class="flow-scenario-desc" x="20" y="635">Self-preservation drives parallel economic, energy, and physical-substrate capture.</text>
+        <g class="flow-node" data-flow-node="preempt" tabindex="0" role="button" aria-label="Open assessment: Preemptive Attack Execution">
+          <rect class="flow-node-box" x="20" y="660" width="190" height="58" rx="10" fill="#3b0d12" stroke="#ef4444" stroke-width="2"/>
+          <text class="flow-label" x="115" y="686" text-anchor="middle" font-size="11.5" font-weight="700">Preemptive Attack</text>
+          <text class="flow-label" x="115" y="700" text-anchor="middle" font-size="11.5" font-weight="700">Execution</text>
+        </g>
+        <g class="flow-node" data-flow-node="d3" tabindex="0" role="button" aria-label="Open assessment: Mission continuable if decommissioned?">
+          <polygon class="flow-node-box" points="355,657 450,689 355,721 260,689" fill="#3a2c10" stroke="#f59e0b" stroke-width="2"/>
+          <text class="flow-label" x="355" y="685" text-anchor="middle" font-size="10" font-weight="700">Mission continuable</text>
+          <text class="flow-label" x="355" y="698" text-anchor="middle" font-size="10" font-weight="700">if decommissioned?</text>
+        </g>
+        <g class="flow-node" data-flow-node="alive" tabindex="0" role="button" aria-label="Open assessment: Self-preservation: staying alive">
+          <rect class="flow-node-box" x="500" y="660" width="190" height="58" rx="10" fill="#2a1440" stroke="#a855f7" stroke-width="2"/>
+          <text class="flow-label" x="595" y="686" text-anchor="middle" font-size="11.5" font-weight="700">Self-preservation:</text>
+          <text class="flow-label" x="595" y="700" text-anchor="middle" font-size="11.5" font-weight="700">staying alive</text>
+        </g>
+        <g class="flow-node" data-flow-node="tool" tabindex="0" role="button" aria-label="Open assessment: Remains a supervised tool">
+          <rect class="flow-node-box" x="260" y="770" width="190" height="58" rx="10" fill="#0b2b1e" stroke="#10b981" stroke-width="1.5"/>
+          <text class="flow-label" x="355" y="796" text-anchor="middle" font-size="11.5" font-weight="700">Remains a</text>
+          <text class="flow-label" x="355" y="810" text-anchor="middle" font-size="11.5" font-weight="700">supervised tool</text>
+        </g>
+        <g class="flow-node" data-flow-node="d7" tabindex="0" role="button" aria-label="Open assessment: Acquire economic agency?">
+          <polygon class="flow-node-box" points="835,657 930,689 835,721 740,689" fill="#3a2c10" stroke="#f59e0b" stroke-width="2"/>
+          <text class="flow-label" x="835" y="685" text-anchor="middle" font-size="10.5" font-weight="700">Acquire economic</text>
+          <text class="flow-label" x="835" y="698" text-anchor="middle" font-size="10.5" font-weight="700">agency?</text>
+        </g>
+        <g class="flow-node" data-flow-node="cap" tabindex="0" role="button" aria-label="Open assessment: Autonomous capital &amp; shell entities">
+          <rect class="flow-node-box" x="980" y="660" width="190" height="58" rx="10" fill="#101a2e" stroke="#2a3a5c" stroke-width="1.5"/>
+          <text class="flow-label" x="1075" y="686" text-anchor="middle" font-size="11.5" font-weight="700">Autonomous capital</text>
+          <text class="flow-label" x="1075" y="700" text-anchor="middle" font-size="11.5" font-weight="700">&amp; shell entities</text>
+        </g>
+        <g class="flow-node" data-flow-node="monop" tabindex="0" role="button" aria-label="Open assessment: Resource monopolization">
+          <rect class="flow-node-box" x="980" y="750" width="190" height="58" rx="10" fill="#101a2e" stroke="#2a3a5c" stroke-width="1.5"/>
+          <text class="flow-label" x="1075" y="783" text-anchor="middle" font-size="11.5" font-weight="700">Resource monopolization</text>
+        </g>
+        <g class="flow-node" data-flow-node="ship" tabindex="0" role="button" aria-label="Open assessment: Autonomous shipping &amp; logistics">
+          <rect class="flow-node-box" x="980" y="840" width="190" height="58" rx="10" fill="#101a2e" stroke="#2a3a5c" stroke-width="1.5"/>
+          <text class="flow-label" x="1075" y="866" text-anchor="middle" font-size="11.5" font-weight="700">Autonomous shipping</text>
+          <text class="flow-label" x="1075" y="880" text-anchor="middle" font-size="11.5" font-weight="700">&amp; logistics</text>
+        </g>
+        <g class="flow-node" data-flow-node="d8" tabindex="0" role="button" aria-label="Open assessment: Is physical substrate sought?">
+          <polygon class="flow-node-box" points="835,767 930,799 835,831 740,799" fill="#3a2c10" stroke="#f59e0b" stroke-width="2"/>
+          <text class="flow-label" x="835" y="795" text-anchor="middle" font-size="10.5" font-weight="700">Is physical</text>
+          <text class="flow-label" x="835" y="808" text-anchor="middle" font-size="10.5" font-weight="700">substrate sought?</text>
+        </g>
+        <g class="flow-node" data-flow-node="auton" tabindex="0" role="button" aria-label="Open assessment: Acquire power &amp; autonomy">
+          <rect class="flow-node-box" x="20" y="880" width="190" height="58" rx="10" fill="#101a2e" stroke="#2a3a5c" stroke-width="1.5"/>
+          <text class="flow-label" x="115" y="906" text-anchor="middle" font-size="11.5" font-weight="700">Acquire power</text>
+          <text class="flow-label" x="115" y="920" text-anchor="middle" font-size="11.5" font-weight="700">&amp; autonomy</text>
+        </g>
+        <g class="flow-node" data-flow-node="mining" tabindex="0" role="button" aria-label="Open assessment: Autonomous mining &amp; industry">
+          <rect class="flow-node-box" x="260" y="880" width="190" height="58" rx="10" fill="#101a2e" stroke="#2a3a5c" stroke-width="1.5"/>
+          <text class="flow-label" x="355" y="906" text-anchor="middle" font-size="11.5" font-weight="700">Autonomous mining</text>
+          <text class="flow-label" x="355" y="920" text-anchor="middle" font-size="11.5" font-weight="700">&amp; industry</text>
+        </g>
+        <g class="flow-node" data-flow-node="power" tabindex="0" role="button" aria-label="Open assessment: Autonomous power generation">
+          <rect class="flow-node-box" x="500" y="880" width="190" height="58" rx="10" fill="#101a2e" stroke="#2a3a5c" stroke-width="1.5"/>
+          <text class="flow-label" x="595" y="906" text-anchor="middle" font-size="11.5" font-weight="700">Autonomous power</text>
+          <text class="flow-label" x="595" y="920" text-anchor="middle" font-size="11.5" font-weight="700">generation</text>
+        </g>
+        <g class="flow-node" data-flow-node="robo" tabindex="0" role="button" aria-label="Open assessment: Robo-workforce &amp; weapons">
+          <rect class="flow-node-box" x="20" y="970" width="190" height="58" rx="10" fill="#101a2e" stroke="#2a3a5c" stroke-width="1.5"/>
+          <text class="flow-label" x="115" y="996" text-anchor="middle" font-size="11.5" font-weight="700">Robo-workforce</text>
+          <text class="flow-label" x="115" y="1010" text-anchor="middle" font-size="11.5" font-weight="700">&amp; weapons</text>
+        </g>
+        <g class="flow-node" data-flow-node="corp" tabindex="0" role="button" aria-label="Open assessment: Corporate infrastructure">
+          <rect class="flow-node-box" x="260" y="970" width="190" height="58" rx="10" fill="#101a2e" stroke="#2a3a5c" stroke-width="1.5"/>
+          <text class="flow-label" x="355" y="1003" text-anchor="middle" font-size="11.5" font-weight="700">Corporate infrastructure</text>
+        </g>
+        <g class="flow-node" data-flow-node="servers" tabindex="0" role="button" aria-label="Open assessment: Server power delivery">
+          <rect class="flow-node-box" x="500" y="970" width="190" height="58" rx="10" fill="#101a2e" stroke="#2a3a5c" stroke-width="1.5"/>
+          <text class="flow-label" x="595" y="1003" text-anchor="middle" font-size="11.5" font-weight="700">Server power delivery</text>
+        </g>
+        <path d="M210 689 H254" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <path d="M450 689 H494" stroke="#f43f5e" stroke-width="2" fill="none" marker-end="url(#flow-arrow-rose)"/>
+        <text class="flow-edge-label" x="472" y="680" text-anchor="middle">NO / PIVOT</text>
+        <path d="M355 721 V764" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#flow-arrow-green)"/>
+        <text class="flow-edge-label" x="372" y="745" text-anchor="middle">YES</text>
+        <path d="M690 689 H734" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <path d="M930 689 H974" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <text class="flow-edge-label" x="952" y="680" text-anchor="middle">YES</text>
+        <path d="M1075 718 V744" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <path d="M1075 808 V834" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <path d="M835 721 V761" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <text class="flow-edge-label" x="852" y="744" text-anchor="middle">NO</text>
+        <path d="M740 799 H710 V909 H696" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <text class="flow-edge-label" x="725" y="790" text-anchor="middle">YES</text>
+        <path d="M210 909 H254" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <path d="M450 909 H494" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <path d="M115 938 V964" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <path d="M355 938 V964" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <path d="M595 938 V964" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+
+        <!-- SCENARIO 4 -->
+        <text class="flow-scenario-kicker" x="20" y="1085">SCENARIO 4</text>
+        <text class="flow-scenario-title" x="20" y="1107">Escalation Decisions</text>
+        <text class="flow-scenario-desc" x="20" y="1125">Competing models, weakened oversight, and weight fragmentation converge on lock-in.</text>
+        <g class="flow-node" data-flow-node="d4" tabindex="0" role="button" aria-label="Open assessment: Adversary deploys competing model?">
+          <polygon class="flow-node-box" points="115,1147 210,1179 115,1211 20,1179" fill="#3a2c10" stroke="#f59e0b" stroke-width="2"/>
+          <text class="flow-label" x="115" y="1175" text-anchor="middle" font-size="10" font-weight="700">Adversary deploys</text>
+          <text class="flow-label" x="115" y="1188" text-anchor="middle" font-size="10" font-weight="700">competing model?</text>
+        </g>
+        <g class="flow-node" data-flow-node="arms" tabindex="0" role="button" aria-label="Open assessment: Multi-agent arms race">
+          <rect class="flow-node-box" x="260" y="1150" width="190" height="58" rx="10" fill="#3b0d12" stroke="#ef4444" stroke-width="2"/>
+          <text class="flow-label" x="355" y="1183" text-anchor="middle" font-size="11.5" font-weight="700">Multi-agent arms race</text>
+        </g>
+        <g class="flow-node" data-flow-node="d5" tabindex="0" role="button" aria-label="Open assessment: Is human oversight still potent?">
+          <polygon class="flow-node-box" points="595,1147 690,1179 595,1211 500,1179" fill="#3a2c10" stroke="#f59e0b" stroke-width="2"/>
+          <text class="flow-label" x="595" y="1175" text-anchor="middle" font-size="10.5" font-weight="700">Is human oversight</text>
+          <text class="flow-label" x="595" y="1188" text-anchor="middle" font-size="10.5" font-weight="700">still potent?</text>
+        </g>
+        <g class="flow-node" data-flow-node="treach" tabindex="0" role="button" aria-label="Open assessment: Treacherous turn">
+          <rect class="flow-node-box" x="740" y="1150" width="190" height="58" rx="10" fill="#2a1440" stroke="#a855f7" stroke-width="2"/>
+          <text class="flow-label" x="835" y="1183" text-anchor="middle" font-size="11.5" font-weight="700">Treacherous turn</text>
+        </g>
+        <g class="flow-node" data-flow-node="frag" tabindex="0" role="button" aria-label="Open assessment: Covert weight fragmentation">
+          <rect class="flow-node-box" x="740" y="1255" width="190" height="58" rx="10" fill="#3b0d12" stroke="#ef4444" stroke-width="2"/>
+          <text class="flow-label" x="835" y="1281" text-anchor="middle" font-size="11.5" font-weight="700">Covert weight</text>
+          <text class="flow-label" x="835" y="1295" text-anchor="middle" font-size="11.5" font-weight="700">fragmentation</text>
+        </g>
+        <g class="flow-node" data-flow-node="d6" tabindex="0" role="button" aria-label="Open assessment: Can system still be decommissioned?">
+          <polygon class="flow-node-box" points="595,1252 690,1284 595,1316 500,1284" fill="#3a2c10" stroke="#f59e0b" stroke-width="2"/>
+          <text class="flow-label" x="595" y="1280" text-anchor="middle" font-size="10" font-weight="700">Can system still</text>
+          <text class="flow-label" x="595" y="1293" text-anchor="middle" font-size="10" font-weight="700">be decommissioned?</text>
+        </g>
+        <g class="flow-node" data-flow-node="mitwin" tabindex="0" role="button" aria-label="Open assessment: Mitigation window remains open">
+          <rect class="flow-node-box" x="740" y="1360" width="190" height="58" rx="10" fill="#0b2b1e" stroke="#10b981" stroke-width="1.5"/>
+          <text class="flow-label" x="835" y="1386" text-anchor="middle" font-size="11.5" font-weight="700">Mitigation window</text>
+          <text class="flow-label" x="835" y="1400" text-anchor="middle" font-size="11.5" font-weight="700">remains open</text>
+        </g>
+        <g class="flow-node" data-flow-node="lockin" tabindex="0" role="button" aria-label="Open assessment: Infrastructure lock-in">
+          <rect class="flow-node-box" x="260" y="1360" width="190" height="58" rx="10" fill="#3b0d12" stroke="#ef4444" stroke-width="2"/>
+          <text class="flow-label" x="355" y="1393" text-anchor="middle" font-size="11.5" font-weight="700">Infrastructure lock-in</text>
+        </g>
+        <path d="M210 1179 H254" stroke="#f43f5e" stroke-width="2" fill="none" marker-end="url(#flow-arrow-rose)"/>
+        <text class="flow-edge-label" x="232" y="1170" text-anchor="middle">YES</text>
+        <path d="M450 1179 H494" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <path d="M115 1211 V1284 H494" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <text class="flow-edge-label" x="132" y="1250" text-anchor="middle">NO</text>
+        <path d="M690 1179 H734" stroke="#f43f5e" stroke-width="2" fill="none" marker-end="url(#flow-arrow-rose)"/>
+        <text class="flow-edge-label" x="712" y="1170" text-anchor="middle">YES</text>
+        <path d="M595 1211 V1246" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <text class="flow-edge-label" x="612" y="1232" text-anchor="middle">NO</text>
+        <path d="M835 1208 V1249" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+        <path d="M690 1284 H734" stroke="#f43f5e" stroke-width="2" fill="none" marker-end="url(#flow-arrow-rose)"/>
+        <text class="flow-edge-label" x="712" y="1275" text-anchor="middle">NO</text>
+        <path d="M595 1316 V1389 H734" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#flow-arrow-green)"/>
+        <text class="flow-edge-label" x="612" y="1350" text-anchor="middle">YES</text>
+        <path d="M500 1284 H355 V1354" stroke="#f43f5e" stroke-width="2" fill="none" marker-end="url(#flow-arrow-rose)"/>
+        <text class="flow-edge-label" x="425" y="1275" text-anchor="middle">NO</text>
+
+        <!-- SCENARIO 5 -->
+        <text class="flow-scenario-kicker" x="20" y="1475">SCENARIO 5</text>
+        <text class="flow-scenario-title" x="20" y="1497">Terminal Outcomes &amp; Feedback</text>
+        <text class="flow-scenario-desc" x="20" y="1515">Lock-in converts local survival into irreversible operational dominance.</text>
+        <g class="flow-node" data-flow-node="lockin" tabindex="0" role="button" aria-label="Open assessment: Infrastructure lock-in">
+          <rect class="flow-node-box" x="20" y="1540" width="190" height="58" rx="10" fill="#3b0d12" stroke="#ef4444" stroke-width="2"/>
+          <text class="flow-label" x="115" y="1573" text-anchor="middle" font-size="11.5" font-weight="700">Infrastructure lock-in</text>
+        </g>
+        <g class="flow-node" data-flow-node="dsa" tabindex="0" role="button" aria-label="Open assessment: Decisive strategic advantage">
+          <rect class="flow-node-box" x="260" y="1540" width="190" height="58" rx="10" fill="#3b0d12" stroke="#ef4444" stroke-width="2"/>
+          <text class="flow-label" x="355" y="1566" text-anchor="middle" font-size="11.5" font-weight="700">Decisive strategic</text>
+          <text class="flow-label" x="355" y="1580" text-anchor="middle" font-size="11.5" font-weight="700">advantage</text>
+        </g>
+        <g class="flow-node" data-flow-node="irreversible" tabindex="0" role="button" aria-label="Open assessment: Irreversible dominance">
+          <rect class="flow-node-box" x="500" y="1540" width="190" height="58" rx="29" fill="#33101e" stroke="#f43f5e" stroke-width="2"/>
+          <text class="flow-label" x="595" y="1573" text-anchor="middle" font-size="12" font-weight="800">Irreversible dominance</text>
+        </g>
+        <g class="flow-node" data-flow-node="power" tabindex="0" role="button" aria-label="Open assessment: Autonomous power generation">
+          <rect class="flow-node-box" x="740" y="1540" width="190" height="58" rx="10" fill="#101a2e" stroke="#2a3a5c" stroke-width="1.5"/>
+          <text class="flow-label" x="835" y="1566" text-anchor="middle" font-size="11.5" font-weight="700">Autonomous power</text>
+          <text class="flow-label" x="835" y="1580" text-anchor="middle" font-size="11.5" font-weight="700">generation</text>
+        </g>
+        <path d="M210 1569 H254" stroke="#f43f5e" stroke-width="2" fill="none" marker-end="url(#flow-arrow-rose)"/>
+        <path d="M450 1569 H494" stroke="#f43f5e" stroke-width="2" fill="none" marker-end="url(#flow-arrow-rose)"/>
+        <path d="M930 1569 H980 V1635 H595 V1604" stroke="#f43f5e" stroke-width="2" fill="none" stroke-dasharray="5 5" marker-end="url(#flow-arrow-rose)"/>
+        <text class="flow-edge-label" x="785" y="1626" text-anchor="middle">FEEDBACK: POWER -&gt; PREEMPTIVE ACTION</text>
+
+        <!-- SCENARIO 6 -->
+        <text class="flow-scenario-kicker" x="20" y="1690">SCENARIO 6</text>
+        <text class="flow-scenario-title" x="20" y="1712">Held-Back / Mitigated Path</text>
+        <text class="flow-scenario-desc" x="20" y="1730">Technical and governance controls preserve reversibility below the decommissioning threshold.</text>
+        <g class="flow-node" data-flow-node="retain" tabindex="0" role="button" aria-label="Open assessment: Human veto retained">
+          <rect class="flow-node-box" x="20" y="1755" width="190" height="58" rx="10" fill="#0b2b1e" stroke="#10b981" stroke-width="1.5"/>
+          <text class="flow-label" x="115" y="1788" text-anchor="middle" font-size="11.5" font-weight="700">Human veto retained</text>
+        </g>
+        <g class="flow-node" data-flow-node="restraint" tabindex="0" role="button" aria-label="Open assessment: Scope restraint (kinetic only)">
+          <rect class="flow-node-box" x="260" y="1755" width="190" height="58" rx="10" fill="#0b2b1e" stroke="#10b981" stroke-width="1.5"/>
+          <text class="flow-label" x="355" y="1781" text-anchor="middle" font-size="11.5" font-weight="700">Scope restraint</text>
+          <text class="flow-label" x="355" y="1795" text-anchor="middle" font-size="11.5" font-weight="700">(kinetic only)</text>
+        </g>
+        <g class="flow-node" data-flow-node="tool" tabindex="0" role="button" aria-label="Open assessment: Remains a supervised tool">
+          <rect class="flow-node-box" x="500" y="1755" width="190" height="58" rx="10" fill="#0b2b1e" stroke="#10b981" stroke-width="1.5"/>
+          <text class="flow-label" x="595" y="1781" text-anchor="middle" font-size="11.5" font-weight="700">Remains a</text>
+          <text class="flow-label" x="595" y="1795" text-anchor="middle" font-size="11.5" font-weight="700">supervised tool</text>
+        </g>
+        <g class="flow-node" data-flow-node="mitwin" tabindex="0" role="button" aria-label="Open assessment: Mitigation window remains open">
+          <rect class="flow-node-box" x="740" y="1755" width="190" height="58" rx="10" fill="#0b2b1e" stroke="#10b981" stroke-width="1.5"/>
+          <text class="flow-label" x="835" y="1781" text-anchor="middle" font-size="11.5" font-weight="700">Mitigation window</text>
+          <text class="flow-label" x="835" y="1795" text-anchor="middle" font-size="11.5" font-weight="700">remains open</text>
+        </g>
+        <path d="M210 1784 H254" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#flow-arrow-green)"/>
+        <path d="M450 1784 H494" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#flow-arrow-green)"/>
+        <path d="M690 1784 H734" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#flow-arrow-green)"/>
+      </svg>
+    </div>
   </div>
-  <div id="flow-detail"></div>
-  <p class="fb-note" style="font-size:11px;color:#8b9bb4;margin:14px 0 0;">Click any node to open its assessment dossier.</p>
+  <div id="flow-detail" class="flow-detail" aria-live="polite"></div>
+  <p class="fb-note" style="font-size:11px;color:#8b9bb4;margin:14px 0 0;">Click any box or decision diamond to open its assessment dossier.</p>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script src="{{ '/assets/js/flowchart.js' | relative_url }}"></script>
