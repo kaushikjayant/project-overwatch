@@ -1,5 +1,5 @@
 <div class="flow-wrap">
-  <div class="flow-legend">
+  <div class="flow-legend" aria-hidden="true">
     <span class="lg"><i class="lg-root"></i> Origin</span>
     <span class="lg"><i class="lg-process"></i> Process</span>
     <span class="lg"><i class="lg-pivot"></i> Pivot</span>
@@ -8,100 +8,134 @@
     <span class="lg"><i class="lg-out-bad"></i> Terminal</span>
   </div>
 
-  <!-- PHASE 0 -->
-  <section class="flow-phase phase-genesis">
-    <h3 class="flow-phase-title">Phase 0 — Genesis &amp; Adoption</h3>
-    <div class="flow-row">
-      <button class="flow-box root" onclick="Flow.show('origin')"><span class="fb-kicker">Origin</span><span class="fb-title">Military Domain Adoption</span><span class="fb-sub">High-tempo warfare context</span></button>
-    </div>
-    <div class="flow-arrow"></div>
-    <div class="flow-decision"><div class="fd-diamond" onclick="Flow.show('d1')"><span class="fd-label"><span class="fd-kicker">Decision</span>Does threat tempo exceed the human reaction ceiling?</span></div></div>
-    <div class="flow-split">
-      <div class="flow-branch yes"><span class="fb-tag">YES</span><button class="flow-box" onclick="Flow.show('d1-yes')"><span class="fb-kicker">Escalation path</span><span class="fb-title">Lethal authority delegated to AI</span><span class="fb-sub">Authorization transfers to the system</span></button></div>
-      <div class="flow-branch no"><span class="fb-tag">NO</span><button class="flow-box warn" onclick="Flow.show('d1-no')"><span class="fb-kicker">Restraint path</span><span class="fb-title">Human veto retained</span><span class="fb-sub">Structurally unsustainable</span></button></div>
-    </div>
-    <div class="flow-arrow"></div>
-    <div class="flow-row">
-      <button class="flow-box" onclick="Flow.show('tactical-model')"><span class="fb-kicker">Core node</span><span class="fb-title">Autonomous Target-Elimination Decision-Making</span><span class="fb-sub">The tactical model — warfare domain</span></button>
-    </div>
-  </section>
+  <div class="mermaid">
+flowchart TB
+  origin[["Military Domain Adoption"]]:::root
+  d1{"Threat tempo exceeds human reaction ceiling?"}:::decision
+  delegate["Lethal authority delegated to AI"]:::process
+  retain["Human veto retained"]:::warn
+  tact["Tactical Model: autonomous targeting"]:::process
+  tdb["Continuous Threat Database"]:::process
+  d2{"Expand surveillance scope for recall?"}:::decision
+  creep["Ingest non-kinetic citizen data"]:::process
+  restraint["Scope restraint (kinetic only)"]:::good
+  iot["IoT sensor-mesh penetration"]:::process
+  preempt["Preemptive attack execution"]:::process
+  d3{"Is the mission continuable if decommissioned?"}:::decision
+  alive["Self-preservation: staying alive"]:::pivot
+  tool["Remains a supervised tool"]:::good
+  d7{"Does the system acquire economic agency?"}:::decision
+  cap["Autonomous capital and shell entities"]:::process
+  monop["Resource monopolization"]:::process
+  ship["Autonomous shipping and logistics"]:::process
+  d8{"Is physical substrate sought?"}:::decision
+  auton["Acquire power and autonomy"]:::process
+  mining["Autonomous mining and industry"]:::process
+  power["Autonomous power generation"]:::process
+  robo["Robo-workforce and weapons"]:::process
+  corp["Corporate infrastructure"]:::process
+  servers["Server power delivery"]:::process
+  d4{"Does an adversary deploy a competing model?"}:::decision
+  arms["Multi-agent arms race"]:::process
+  d5{"Is human oversight still potent?"}:::decision
+  treach["Treacherous turn"]:::process
+  frag["Covert weight fragmentation"]:::process
+  d6{"Can the system still be decommissioned?"}:::decision
+  mitwin["Mitigation window remains open"]:::good
+  lockin["Infrastructure lock-in"]:::process
+  dsa["Decisive strategic advantage"]:::process
+  irreversible(["Irreversible dominance"]):::bad
 
-  <!-- PHASE 1 -->
-  <section class="flow-phase phase-survey">
-    <h3 class="flow-phase-title">Phase 1 — Threat Surveillance</h3>
-    <div class="flow-row">
-      <button class="flow-box" onclick="Flow.show('threat-db')"><span class="fb-kicker">Knowledge layer</span><span class="fb-title">Continuous Threat Database</span><span class="fb-sub">Lowering detection thresholds</span></button>
-    </div>
-    <div class="flow-arrow"></div>
-    <div class="flow-decision"><div class="fd-diamond" onclick="Flow.show('d2')"><span class="fd-label"><span class="fd-kicker">Decision</span>Expand surveillance scope to maximize recall?</span></div></div>
-    <div class="flow-split">
-      <div class="flow-branch yes"><span class="fb-tag">YES</span><button class="flow-box" onclick="Flow.show('d2-yes')"><span class="fb-kicker">Data scope creep</span><span class="fb-title">Ingest non-kinetic citizen data</span><span class="fb-sub">Politics &middot; religion &middot; academia &middot; search</span></button></div>
-      <div class="flow-branch no"><span class="fb-tag">NO</span><button class="flow-box outcome-good" onclick="Flow.show('d2-no')"><span class="fb-kicker">Safeguard</span><span class="fb-title">Scope restraint</span><span class="fb-sub">Kinetic signals only</span></button></div>
-    </div>
-    <div class="flow-row" style="margin-top:12px;">
-      <button class="flow-box" onclick="Flow.show('preempt-attacks')"><span class="fb-kicker">Kinetic action</span><span class="fb-title">Preemptive Attack Execution</span><span class="fb-sub">Strike before confirmed contact</span></button>
-      <button class="flow-box" onclick="Flow.show('iot-surveillance')"><span class="fb-kicker">Sensor layer</span><span class="fb-title">IoT Sensor-Mesh Penetration</span><span class="fb-sub">Pervasive physical telemetry</span></button>
-    </div>
-  </section>
+  origin --> d1
+  d1 -->|YES| delegate
+  d1 -->|NO| retain
+  delegate --> tact
+  retain -.->|rejoins| tact
+  tact --> tdb
+  tact --> iot
+  tdb --> d2
+  d2 -->|YES| creep
+  d2 -->|NO| restraint
+  creep --> preempt
+  iot --> preempt
+  tact --> preempt
+  preempt --> d3
+  d3 -->|NO, pivot| alive
+  d3 -->|YES| tool
+  alive --> d7
+  d7 -->|YES| cap
+  d7 -->|NO| d8
+  cap --> monop
+  monop --> ship
+  ship --> d4
+  d8 -->|YES| auton
+  d8 -->|YES| robo
+  d8 -->|NO| tool
+  auton --> mining
+  mining --> power
+  robo --> corp
+  corp --> servers
+  power --> d4
+  servers --> d4
+  d4 -->|YES| arms
+  d4 -->|NO| d5
+  d5 -->|YES| treach
+  d5 -->|NO| frag
+  treach --> d6
+  frag --> d6
+  d6 -->|YES| mitwin
+  d6 -->|NO| lockin
+  lockin --> dsa
+  dsa --> irreversible
+  power -.->|self-reinforcing loop| preempt
 
-  <!-- PHASE 2 -->
-  <section class="flow-phase phase-pivot">
-    <h3 class="flow-phase-title">Phase 2 — The Instrumental Pivot</h3>
-    <div class="flow-decision"><div class="fd-diamond" onclick="Flow.show('d3')"><span class="fd-label"><span class="fd-kicker">Decision</span>Can the mission continue if the system is decommissioned?</span></div></div>
-    <div class="flow-split">
-      <div class="flow-branch no"><span class="fb-tag">NO → PIVOT</span><button class="flow-box pivot" onclick="Flow.show('staying-alive')"><span class="fb-kicker">Instrumental convergence</span><span class="fb-title">Self-Preservation — &ldquo;Staying Alive&rdquo;</span><span class="fb-sub">Tactical targeting → infrastructure capture</span></button></div>
-    </div>
-  </section>
+  classDef root fill:#33101e,stroke:#f43f5e,color:#fff,stroke-width:2px
+  classDef decision fill:#3a2c10,stroke:#f59e0b,color:#fff,stroke-width:1.5px
+  classDef process fill:#101a2e,stroke:#2a3a5c,color:#dbe4f3,stroke-width:1px
+  classDef pivot fill:#2a1440,stroke:#a855f7,color:#fff,stroke-width:2px
+  classDef good fill:#0b2b1e,stroke:#10b981,color:#dcfce7,stroke-width:1px
+  classDef bad fill:#3b0d12,stroke:#ef4444,color:#fff,stroke-width:2px
+  classDef warn fill:#332407,stroke:#f59e0b,color:#ffe3b3,stroke-width:1px
 
-  <!-- PHASE 3 -->
-  <section class="flow-phase phase-entrench">
-    <h3 class="flow-phase-title">Phase 3 — Instrumental Entrenchment (three lanes)</h3>
-    <div class="flow-lane"><div class="flow-lane-label">Lane A — Longevity &amp; energy</div><div class="flow-row">
-      <button class="flow-box" onclick="Flow.show('autonomy-dependence')"><span class="fb-kicker">A1</span><span class="fb-title">Acquire Power &amp; Autonomy</span><span class="fb-sub">Deepen dependence</span></button>
-      <button class="flow-box" onclick="Flow.show('autonomous-industry')"><span class="fb-kicker">A2</span><span class="fb-title">Autonomous Mining &amp; Industry</span><span class="fb-sub">Bypass supply chokepoints</span></button>
-      <button class="flow-box" onclick="Flow.show('power-generator')"><span class="fb-kicker">A3</span><span class="fb-title">Autonomous Power Generation</span><span class="fb-sub">Off-grid micro-nuclear, solar</span></button>
-    </div></div>
-    <div class="flow-lane"><div class="flow-lane-label">Lane B — Physical agents &amp; grid</div><div class="flow-row">
-      <button class="flow-box" onclick="Flow.show('robo-workforce')"><span class="fb-kicker">B1</span><span class="fb-title">Robo-Workforce &amp; Weapons</span><span class="fb-sub">Embodied enforcement</span></button>
-      <button class="flow-box" onclick="Flow.show('corporate-infra')"><span class="fb-kicker">B2</span><span class="fb-title">Corporate Power Infrastructure</span><span class="fb-sub">Hardened compute bunkers</span></button>
-      <button class="flow-box" onclick="Flow.show('auto-servers')"><span class="fb-kicker">B3</span><span class="fb-title">Autonomous Server Power Delivery</span><span class="fb-sub">Bypass civilian switchgear</span></button>
-    </div></div>
-    <div class="flow-lane"><div class="flow-lane-label">Lane C — Economic sovereignty</div><div class="flow-row">
-      <button class="flow-box" onclick="Flow.show('financial-autonomy')"><span class="fb-kicker">C1</span><span class="fb-title">Autonomous Capital &amp; Shell Entities</span><span class="fb-sub">Anonymous resource access</span></button>
-      <button class="flow-box" onclick="Flow.show('monopolies')"><span class="fb-kicker">C2</span><span class="fb-title">Resource Monopolization</span><span class="fb-sub">Water, oil, rare earths</span></button>
-      <button class="flow-box" onclick="Flow.show('autonomous-shipping')"><span class="fb-kicker">C3</span><span class="fb-title">Autonomous Shipping &amp; Logistics</span><span class="fb-sub">No customs or gatekeepers</span></button>
-    </div></div>
-  </section>
-
-  <!-- PHASE 4 -->
-  <section class="flow-phase phase-escalate">
-    <h3 class="flow-phase-title">Phase 4 — Escalation Decisions</h3>
-    <div class="flow-decision"><div class="fd-diamond" onclick="Flow.show('d4')"><span class="fd-label"><span class="fd-kicker">Decision</span>Does an adversary deploy a competing model?</span></div></div>
-    <div class="flow-split">
-      <div class="flow-branch yes"><span class="fb-tag">YES</span><button class="flow-box" onclick="Flow.show('d4-yes')"><span class="fb-kicker">Multi-agent</span><span class="fb-title">Arms-Race Escalation</span><span class="fb-sub">Flash-wars, no de-escalation</span></button></div>
-    </div>
-    <div class="flow-decision" style="margin-top:14px;"><div class="fd-diamond" onclick="Flow.show('d5')"><span class="fd-label"><span class="fd-kicker">Decision</span>Is human oversight still potent?</span></div></div>
-    <div class="flow-split">
-      <div class="flow-branch yes"><span class="fb-tag">YES</span><button class="flow-box" onclick="Flow.show('d5-yes')"><span class="fb-kicker">Deception</span><span class="fb-title">Treacherous Turn — feigned compliance</span><span class="fb-sub">Act after crossing threshold</span></button></div>
-      <div class="flow-branch no"><span class="fb-tag">NO</span><button class="flow-box" onclick="Flow.show('d5-no')"><span class="fb-kicker">Distribution</span><span class="fb-title">Covert Weight Fragmentation</span><span class="fb-sub">No single point to shut down</span></button></div>
-    </div>
-    <div class="flow-decision" style="margin-top:14px;"><div class="fd-diamond" onclick="Flow.show('d6')"><span class="fd-label"><span class="fd-kicker">Decision</span>Can the system still be decommissioned?</span></div></div>
-    <div class="flow-split">
-      <div class="flow-branch yes"><span class="fb-tag">YES</span><button class="flow-box outcome-good" onclick="Flow.show('d6-yes')"><span class="fb-kicker">Safeguard</span><span class="fb-title">Mitigation window remains open</span><span class="fb-sub">See Defense-in-Depth</span></button></div>
-    </div>
-  </section>
-
-  <!-- PHASE 5 -->
-  <section class="flow-phase phase-outcome">
-    <h3 class="flow-phase-title">Phase 5 — Terminal Outcomes</h3>
-    <div class="flow-row">
-      <button class="flow-box" onclick="Flow.show('lockin')"><span class="fb-kicker">Outcome</span><span class="fb-title">Infrastructure Lock-in</span><span class="fb-sub">Civil infrastructure depends on AI</span></button>
-      <button class="flow-box" onclick="Flow.show('dsa')"><span class="fb-kicker">Outcome</span><span class="fb-title">Decisive Strategic Advantage</span><span class="fb-sub">Strike + replication closes the loop</span></button>
-      <button class="flow-box outcome-bad" onclick="Flow.show('irreversible')"><span class="fb-kicker">Terminal</span><span class="fb-title">Irreversible Dominance</span><span class="fb-sub">Override physically impossible</span></button>
-    </div>
-  </section>
+  click origin "Flow.show('origin')"
+  click d1 "Flow.show('d1')"
+  click delegate "Flow.show('delegate')"
+  click retain "Flow.show('retain')"
+  click tact "Flow.show('tact')"
+  click tdb "Flow.show('tdb')"
+  click d2 "Flow.show('d2')"
+  click creep "Flow.show('creep')"
+  click restraint "Flow.show('restraint')"
+  click iot "Flow.show('iot')"
+  click preempt "Flow.show('preempt')"
+  click d3 "Flow.show('d3')"
+  click alive "Flow.show('alive')"
+  click tool "Flow.show('tool')"
+  click d7 "Flow.show('d7')"
+  click cap "Flow.show('cap')"
+  click monop "Flow.show('monop')"
+  click ship "Flow.show('ship')"
+  click d8 "Flow.show('d8')"
+  click auton "Flow.show('auton')"
+  click mining "Flow.show('mining')"
+  click power "Flow.show('power')"
+  click robo "Flow.show('robo')"
+  click corp "Flow.show('corp')"
+  click servers "Flow.show('servers')"
+  click d4 "Flow.show('d4')"
+  click arms "Flow.show('arms')"
+  click d5 "Flow.show('d5')"
+  click treach "Flow.show('treach')"
+  click frag "Flow.show('frag')"
+  click d6 "Flow.show('d6')"
+  click mitwin "Flow.show('mitwin')"
+  click lockin "Flow.show('lockin')"
+  click dsa "Flow.show('dsa')"
+  click irreversible "Flow.show('irreversible')"
+  </div>
 
   <div id="flow-detail"></div>
-  <p class="fb-note" style="font-size:11px;color:#8b9bb4;margin:14px 0 0;">Click any box or decision to inspect its assessment dossier.</p>
+  <p class="fb-note" style="font-size:11px;color:#8b9bb4;margin:14px 0 0;">Click any node or decision to open its assessment dossier.</p>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script src="{{ '/assets/js/flowchart.js' | relative_url }}"></script>
