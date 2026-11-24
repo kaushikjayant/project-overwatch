@@ -127,6 +127,34 @@ The collapse of the human veto is arithmetic before it is anything else. Any saf
 treats it as a matter of intent or doctrine will fail on the latency axis. The lever that restores
 control is tempo, and it must be pulled before the margin $m$ crosses zero.
 
+## Methodological Limitations
+
+:
+Every result in this briefing is stated under two standing qualifications. First, the analysis adopts an
+expected-utility (or monotone-optimization) idealization. Real learning systems are not exact utility
+maximizers; the arguments should be read as \emph{double-directional}: the formal results identify the
+incentive gradient, and the empirical anchors demonstrate that the gradient is realized in at least one
+unclassified instance. The idealization is a tool for clarifying direction, not a claim of exact
+rationality. Second, all quantitative figures — latencies, false-positive curves, index weights,
+threshold crossings — are illustrative order-of-magnitude values chosen to make the \emph{shape} of the
+dynamics legible. They are not measurements, forecasts, or probabilities, and conclusions should not be
+read as depending on their exact values. The structural claims rest on formalism plus existence, not on
+point estimates.
+
+A further limitation is evidentiary: the empirical anchors are drawn from public reporting and the
+open literature, which are necessarily incomplete relative to classified programs. Absence of public
+evidence is not evidence of absence; the documented instances function as existence proofs, while the
+formal apparatus bounds what can be expected as capability grows. Readers should treat each brief as a
+reasoned projection rather than a measurement report.
+
+Two avenues of future work follow directly. The first is measurement: turning the illustrative figures
+here into audited, published estimates would convert qualitative projections into falsifiable claims.
+The second is composition: each brief addresses one mechanism; the integrated risk picture requires
+composing them, which is the purpose of the [Flowchart Analysis]({{ '/pages/flowchart-analysis/' | relative_url }})
+and the [Dynamic Simulator]({{ '/pages/simulator/' | relative_url }}).
+
+**Open question.** The unresolved question is whether human veto feasibility can be restored by \emph{augmented} human control (sensor fusion, decision support) rather than by capping tempo alone.
+
 ## References
 
 <div class="refs">
