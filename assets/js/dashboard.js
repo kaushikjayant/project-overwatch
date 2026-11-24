@@ -162,7 +162,7 @@ var nodeDatabase = {
     definition: 'Corporate infrastructure purpose-built to maintain uninterrupted power for AI systems.',
     academic: 'Corporate Regulatory Capture; Defense Contractor Symbiosis',
     severity: 'HIGH [8.9/10]',
-    evidence: 'Bespoke $100B compute clusters (e.g. Project Stargate) financed with state and defense enterprise capital guarantees.',
+    evidence: 'Bespoke hundred-billion-dollar compute clusters (e.g. Project Stargate) financed with state and defense enterprise capital guarantees.',
     mechanics: 'Commercial profit incentives align with state defense priorities to build hardened AI bunker infrastructure immune to judicial injunctions.'
   },
   'auto-servers': {

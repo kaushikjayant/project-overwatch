@@ -397,3 +397,19 @@ h1, h2, h3, h4, h5 { color: var(--text); line-height: 1.2; font-weight: 700; let
 .prose .metric-row .m { flex: 1 1 140px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
 .prose .metric-row .m .k { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); display: block; }
 .prose .metric-row .m .v { font-size: 24px; font-weight: 800; font-family: var(--font-mono); margin-top: 4px; }
+
+/* Research-article elements */
+.abstract { background: rgba(34,211,238,0.06); border-left: 3px solid var(--cyan); padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 22px 0 10px; }
+.abstract h4 { margin: 0 0 6px; font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--cyan); }
+.abstract p { margin: 0; font-size: 15px; color: var(--text-soft); }
+.keywords { font-size: 12.5px; color: var(--text-muted); margin: 0 0 28px; font-family: var(--font-mono); }
+.keywords strong { color: var(--text-soft); }
+.theorem { background: rgba(16,185,129,0.06); border: 1px solid rgba(16,185,129,0.3); border-radius: 10px; padding: 14px 18px; margin: 22px 0; font-size: 15px; }
+.theorem .th-name { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--emerald); margin-bottom: 6px; display: block; }
+.eq { text-align: center; margin: 18px 0; font-size: 17px; color: var(--text); overflow-x: auto; }
+.refs ol { padding-left: 20px; font-size: 13px; }
+.refs li { margin-bottom: 7px; }
+.refs { font-size: 13px; }
+.further { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 22px; }
+.further h4 { margin: 0 0 8px; }
+.prose .figure { margin: 22px 0; font-size: 13px; color: var(--text-muted); text-align: center; }
